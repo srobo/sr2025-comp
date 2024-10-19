@@ -1,14 +1,91 @@
-# Mapping of teams at the competition, from their TLA to their properties.
 teams:
-    ABC:
-        name: Absolutely Brilliant College
+    ABS:
+        name: Abingdon School
         rookie: false
-    SRZ1:
-        name: Example team 1
+    BPV:
+        name: Barton Peveril College
         rookie: false
-    SRZ2:
-        name: Example team 2
+    BRK:
+        name: Brockenhurst College
         rookie: false
-    SRZ3:
-        name: Example team 3
+    CLY:
+        name: The College of Richard Collyer
+        rookie: false
+    DCS:
+        name: Dr Challoner's Grammar School
+        rookie: true
+    GHS:
+        name: Guildford High School
+        rookie: true
+    HAB:
+        name: Haberdashers’ Boys’ School
+        rookie: false
+    HAM:
+        name: Hampton School
+        rookie: false
+    HAY:
+        name: Haydon School
+        rookie: false
+    HRO:
+        name: Headington Rye School Oxford
+        rookie: false
+    HRS:
+        name: Hills Road Sixth Form College
+        rookie: false
+    HWM:
+        name: Harris Westminster Sixth Form
+        rookie: false
+    HZW:
+        name: Hazelwick School
+        rookie: false
+    JAG:
+        name: James Allen's Girls' School
+        rookie: true
+    KEG:
+        name: King Edward VI Grammar School
+        rookie: false
+    KEV:
+        name: King Edward VI School
+        rookie: false
+    MAI:
+        name: Gymnasium Markt Indersdorf
+        rookie: false
+    MDN:
+        name: Midsomer Norton Friends
+        rookie: true
+    NHH:
+        name: Nower Hill School
+        rookie: true
+    PSC:
+        name: Peter Symonds College
+        rookie: false
+    QMC:
+        name: Queen Mary's College
+        rookie: false
+    RGS:
+        name: Royal Grammar School Guildford
+        rookie: false
+    RTS:
+        name: Ruthin School
+        rookie: false
+    SHK:
+        name: School of St Helen and St Katharine
+        rookie: true
+    SOG:
+        name: Saint Olaves Grammar School
+        rookie: false
+    THS:
+        name: The Highfield School
+        rookie: true
+    TLC:
+        name: The Ladies College
+        rookie: false
+    TMD:
+        name: Tormead School
+        rookie: true
+    WGS:
+        name: Wisbech Grammar School
+        rookie: false
+    WMC:
+        name: Westminster City School
         rookie: false

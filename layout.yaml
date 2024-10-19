@@ -4,7 +4,33 @@ teams:
   - name: fixed-string-region-id
     display_name: Human Readable Region Name
     teams:
-      - ABC
-      - SRZ1
-      - SRZ2
-      - SRZ3
+      - ABS
+      - BPV
+      - BRK
+      - CLY
+      - DCS
+      - GHS
+      - HAB
+      - HAM
+      - HAY
+      - HRO
+      - HRS
+      - HWM
+      - HZW
+      - JAG
+      - KEG
+      - KEV
+      - MAI
+      - MDN
+      - NHH
+      - PSC
+      - QMC
+      - RGS
+      - RTS
+      - SHK
+      - SOG
+      - THS
+      - TLC
+      - TMD
+      - WGS
+      - WMC
