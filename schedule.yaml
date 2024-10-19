@@ -1,0 +1,80 @@
+# Primary description of the overall schedule of the competition.
+#
+# All durations are in seconds.
+
+#
+# Matches are played within slots, set their lengths:
+match_slot_lengths:
+  pre: 60
+  match: 150
+  post: 90
+  total: 300
+#
+# Various staging related times, in seconds before the actual match start
+staging:
+  # The earliest teams can present themselves for a match
+  opens: 300
+  # The time by which teams _must_ be in staging
+  closes: 150
+  # How long staging is open for; equal to `opens - closes`
+  duration: 150
+  # How long before the start of the match to signal to shepherds they
+  # should start looking for teams
+  signal_shepherds:
+    Shepherd Name: 180
+  # How long before the start of the match to signal to teams they should
+  # go to staging
+  signal_teams: 180
+#
+timezone: Europe/London
+#
+# Delays which happened, record the wall-clock time and desired duration.
+delays:
+- delay: 180
+  time: 2024-04-13 12:40:00+01:00
+
+#
+# Timings during which match slots of a given type (league, knockout) can be
+# scheduled. These should match up to the published day schedule for the event.
+#
+# Times here relate to the *start* of a match slot, so allow enough time for a
+# match to complete if there is something else important happening immediately
+# after a period ends.
+match_periods:
+  league:
+  - start_time: 2024-03-09 13:10:00+00:00
+    end_time: 2024-03-09 14:50:00+00:00
+    max_end_time: 2024-03-09 15:00:00+00:00
+    description: Virtual league
+
+#
+  - start_time: 2024-04-13 12:40:00+01:00
+    end_time: 2024-04-13 13:58:00+01:00
+    max_end_time: 2024-04-13 14:00:00+01:00
+    description: Saturday league, early afternoon
+
+#
+  knockout:
+  - start_time: 2024-04-14 14:15:00+01:00
+    end_time: 2024-04-14 15:53:00+01:00
+    max_end_time: 2024-04-14 15:55:00+01:00
+    description: Knockouts
+
+league:
+  # Extra spacing before an arbitrary set of matches. Typically used to allow
+  # marshals and teams to get into the rhythm of running matches.
+  # This value is ignored for matches which occur at the start of a period
+  # since no additional time is needed there.
+  extra_spacing:
+    # Supports ranges (`1-3`) and comma separated lists (`1,3`) or combinations
+    # thereof (`4,8-10`). Must be a string.
+    - match_numbers: 1-20
+      duration: 0
+
+knockout:
+  round_spacing: 300 # Delay between knockout rounds
+  final_delay: 180   # Extra delay before the finals
+  single_arena:
+    rounds: 0
+    arenas:
+    - main

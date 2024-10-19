@@ -1,0 +1,6 @@
+# List of shepherds within the venue and the regions for which they are each
+# responsible.
+shepherds:
+  - name: Shepherd Name
+    colour: palegreen  # CSS compatible colour string
+    regions: [fixed-string-region-id]

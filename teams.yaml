@@ -1,0 +1,14 @@
+# Mapping of teams at the competition, from their TLA to their properties.
+teams:
+    ABC:
+        name: Absolutely Brilliant College
+        rookie: false
+    SRZ1:
+        name: Example team 1
+        rookie: false
+    SRZ2:
+        name: Example team 2
+        rookie: false
+    SRZ3:
+        name: Example team 3
+        rookie: false

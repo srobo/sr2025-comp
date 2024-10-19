@@ -1,0 +1,10 @@
+# List of regions within the venue and the teams which are in that area.
+# Used for the shepherding screens.
+teams:
+  - name: fixed-string-region-id
+    display_name: Human Readable Region Name
+    teams:
+      - ABC
+      - SRZ1
+      - SRZ2
+      - SRZ3

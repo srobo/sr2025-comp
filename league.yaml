@@ -1,0 +1,12 @@
+# Description of the league matches to be played.
+# The format is `matches` -> number -> arena -> list of teams.
+# Match numbers are 0-N, preferably in order, and must not omit any values.
+# The list of teams is ordered -- zone 0 first up to the Nth zone.
+
+matches:
+  0:
+    main:
+      - SRZ2
+      - ABC
+      - SRZ1
+      - SRZ3
