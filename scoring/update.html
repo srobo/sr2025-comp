@@ -1,5 +1,76 @@
 {% extends "_update.html" %}
 
+{% macro input_highest(x, y, name) %}
+    <foreignObject x="{{ x + 5 }}" y="{{ y }}" width="90" height="30">
+        <input
+            class="highest"
+            placeholder="Highest"
+            type="text"
+            id="district_{{ name }}_highest"
+            name="district_{{ name }}_highest"
+            value="{{ request.form.get('district_{}_highest'.format(name)) | empty_if_none }}"
+            onkeyup="token_input_change(this);"
+        />
+    </foreignObject>
+{% endmacro %}
+
+{% macro input_pallets(x, y, name) %}
+    <foreignObject x="{{ x + 5 }}" y="{{ y }}" width="90" height="30">
+        <input
+            class="pallets"
+            placeholder="Pallets"
+            type="text"
+            id="district_{{ name }}_pallets"
+            name="district_{{ name }}_pallets"
+            value="{{ request.form.get('district_{}_pallets'.format(name)) | empty_if_none }}"
+            onkeyup="token_input_change(this);"
+        />
+    </foreignObject>
+{% endmacro %}
+
+{% macro district(name, x, y) %}
+    <g id="district-{{ corner }}">
+        <rect height="100" width="100" stroke="#000" x="{{ x }}" y="{{ y }}" stroke-width="2" fill="#fff"/>
+        {{ input_highest(x, y + 10, name) }}
+        {{ input_pallets(x, y + 50, name) }}
+    </g>
+{% endmacro %}
+
+{% macro zone(corner, x, y) %}
+    <g id="zone-{{ corner }}">
+        <text><tspan x="{{ x + 130 }}" y="{{ y }}" stroke="{{ corners[corner].colour }}" font-size="1.75em" fill="#4d4d4d">Zone {{ corner }}</tspan></text>
+        {{ input_tla(x, y + 15, corner) }}
+        {{ input_present(x + 160, y + 15, corner) }}
+        {{ input_disqualified(x + 120, y + 45, corner) }}
+        {{ input_checkbox(x + 70, y + 75, 170, corner, "left_starting_zone", "Left Starting Zone") }}
+    </g>
+{% endmacro %}
+
+{% block form_content %}
+<svg xmlns="http://www.w3.org/2000/svg" height="940" width="600" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <rect height="600" width="600" stroke="#000" y="165" x="0" stroke-width="2" fill="#f4f3ff"/>
+
+    <g id="zones">
+        {{ zone(0, 10, 40) }}
+        {{ zone(1, 320, 40) }}
+        {{ zone(2, 320, 805) }}
+        {{ zone(3, 10, 805) }}
+    </g>
+
+    <g id="districts" transform="translate(0 175)">
+        {{ district('outer_nw', 50, 50) }}
+        {{ district('outer_ne', 450, 50) }}
+        {{ district('outer_se', 450, 450) }}
+        {{ district('outer_sw', 50, 450) }}
+        {{ district('inner_nw', 150, 150) }}
+        {{ district('inner_ne', 350, 150) }}
+        {{ district('inner_se', 350, 350) }}
+        {{ district('inner_sw', 150, 350) }}
+        {{ district('central', 250, 250) }}
+    </g>
+</svg>
+{% endblock %}
+
 {% block valid_token_regex %}
 var valid_token_regex = /^[GOPY]*$/;
 {% endblock %}
