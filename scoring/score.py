@@ -29,7 +29,7 @@ def join_text(strings: Iterable[str], separator: str) -> str:
 
     try:
         *strings, right = strings
-    except TypeError:
+    except ValueError:
         return ""
 
     if not strings:
