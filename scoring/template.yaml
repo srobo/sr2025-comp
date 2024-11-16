@@ -1,30 +1,54 @@
 arena_id: main
 arena_zones:
-  0:
-    tokens: ''
-  1:
-    tokens: ''
-  2:
-    tokens: ''
-  3:
-    tokens: ''
   other:
-    tokens: ''
+    districts:
+      outer_nw:
+        highest: ''
+        pallets: ''
+      outer_ne:
+        highest: ''
+        pallets: ''
+      outer_se:
+        highest: ''
+        pallets: ''
+      outer_sw:
+        highest: ''
+        pallets: ''
+      inner_nw:
+        highest: ''
+        pallets: ''
+      inner_ne:
+        highest: ''
+        pallets: ''
+      inner_se:
+        highest: ''
+        pallets: ''
+      inner_sw:
+        highest: ''
+        pallets: ''
+      central:
+        highest: ''
+        pallets: ''
+
 match_number: 0
 teams:
   TLA0:
     disqualified: false
     present: true
+    left_starting_zone: false
     zone: 0
   TLA1:
     disqualified: true
     present: false
+    left_starting_zone: false
     zone: 1
   TLA2:
     disqualified: false
     present: true
+    left_starting_zone: false
     zone: 2
   TLA3:
     disqualified: false
     present: false
+    left_starting_zone: false
     zone: 3
