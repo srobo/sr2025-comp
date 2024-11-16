@@ -85,9 +85,13 @@ class Scorer:
         if self._districts.keys() != DISTRICT_SCORE_MAP.keys():
             missing = DISTRICT_SCORE_MAP.keys() - self._districts.keys()
             extra = self._districts.keys() - DISTRICT_SCORE_MAP.keys()
+            detail = "Wrong districts specified."
+            if missing:
+                detail += f" Missing: {join_and(missing)}."
+            if extra:
+                detail += f" Extra: {join_and(repr(x) for x in extra)}."
             raise InvalidScoresheetException(
-                f"Wrong districts specified. Missing: {join_and(missing)}. "
-                f"Extra: {extra!r}",
+                detail,
                 code='invalid_districts',
             )
 
@@ -163,12 +167,11 @@ class Scorer:
         totals = collections.Counter()
         for district in self._districts.values():
             totals += district['pallet_counts']
-        too_many = {x for x, y in totals.items() if y > TOKENS_PER_ZONE}
-        if too_many:
+        if any(x > TOKENS_PER_ZONE for x in totals.values()):
             raise InvalidScoresheetException(
                 f"Too many pallets of some kinds specified, must be no more "
                 f"than {TOKENS_PER_ZONE} of each type.\n"
-                f"{too_many!r}",
+                f"{totals!r}",
                 code='too_many_pallets',
             )
 
