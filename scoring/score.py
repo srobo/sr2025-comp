@@ -74,10 +74,12 @@ class Scorer:
         scores = {}
 
         for tla, info in self._teams_data.items():
-            scores[tla] = sum(
+            district_score = sum(
                 self.score_district_for_zone(name, district, info['zone'])
                 for name, district in self._districts.items()
             )
+            movement_score = 1 if info.get('left_starting_zone') else 0
+            scores[tla] = district_score + movement_score
 
         return scores
 

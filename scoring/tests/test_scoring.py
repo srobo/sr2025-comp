@@ -97,6 +97,16 @@ class ScorerTests(unittest.TestCase):
 
     # Scoring logic
 
+    def test_left_starting_zone(self) -> None:
+        self.teams_data['GGG']['left_starting_zone'] = True
+        self.assertScores(
+            {
+                'GGG': 1,
+                'OOO': 0,
+            },
+            self.districts,
+        )
+
     def test_outer_single(self) -> None:
         self.districts['outer_nw']['highest'] = 'G'
         self.districts['outer_nw']['pallets'] = 'G'
@@ -194,6 +204,7 @@ class ScorerTests(unittest.TestCase):
         )
 
     def test_mixed(self) -> None:
+        self.teams_data['OOO']['left_starting_zone'] = True
         self.districts['outer_sw']['highest'] = 'O'
         self.districts['outer_sw']['pallets'] = 'O'
         self.districts['inner_sw']['highest'] = 'G'
