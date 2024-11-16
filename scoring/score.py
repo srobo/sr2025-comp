@@ -66,7 +66,7 @@ class Scorer:
 
         if colour in district['highest']:
             # Points are doubled for the team owning the highest pallet
-            score * 2
+            score *= 2
 
         return score
 
