@@ -3,13 +3,14 @@
 {% macro input_highest(x, y, name) %}
     <foreignObject x="{{ x + 5 }}" y="{{ y }}" width="90" height="30">
         <input
-            class="highest"
+            class="highest tokens"
             placeholder="Highest"
             type="text"
             id="district_{{ name }}_highest"
             name="district_{{ name }}_highest"
             value="{{ request.form.get('district_{}_highest'.format(name)) | empty_if_none }}"
             onkeyup="token_input_change(this);"
+            pattern="^[GOPY]?$"
         />
     </foreignObject>
 {% endmacro %}
@@ -17,13 +18,14 @@
 {% macro input_pallets(x, y, name) %}
     <foreignObject x="{{ x + 5 }}" y="{{ y }}" width="90" height="30">
         <input
-            class="pallets"
+            class="pallets tokens"
             placeholder="Pallets"
             type="text"
             id="district_{{ name }}_pallets"
             name="district_{{ name }}_pallets"
             value="{{ request.form.get('district_{}_pallets'.format(name)) | empty_if_none }}"
             onkeyup="token_input_change(this);"
+            pattern="^[GOPY]*$"
         />
     </foreignObject>
 {% endmacro %}
@@ -69,8 +71,4 @@
         {{ district('central', 250, 250) }}
     </g>
 </svg>
-{% endblock %}
-
-{% block valid_token_regex %}
-var valid_token_regex = /^[GOPY]*$/;
 {% endblock %}
