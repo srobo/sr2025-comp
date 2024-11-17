@@ -53,10 +53,11 @@
     <rect height="600" width="600" stroke="#000" y="165" x="0" stroke-width="2" fill="#f4f3ff"/>
 
     <g id="zones">
-        {{ zone(0, 10, 40) }}
-        {{ zone(1, 320, 40) }}
-        {{ zone(2, 320, 805) }}
-        {{ zone(3, 10, 805) }}
+        {# Yes, zone 0 deliberately bottom left #}
+        {{ zone(0, 10, 805) }}
+        {{ zone(1, 10, 40) }}
+        {{ zone(2, 320, 40) }}
+        {{ zone(3, 320, 805) }}
     </g>
 
     <g id="districts" transform="translate(0 165) translate(25 25)">
