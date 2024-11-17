@@ -170,23 +170,6 @@ class Scorer:
                 code='impossible_highest_pallet',
             )
 
-        # Check that the "highest" pallet is assigned in the case where a
-        # district has pallets from only one team.
-        missing_highest = {}
-        for name, district in self._districts.items():
-            highest = district['highest']
-            pallet_counts = district['pallet_counts']
-            if len(pallet_counts) == 1 and not highest:
-                pallet, = pallet_counts.keys()
-                missing_highest[name] = pallet
-        if missing_highest:
-            raise InvalidScoresheetException(
-                f"Some districts with pallets from a single team are missing "
-                "specification of the highest.\n"
-                f"{missing_highest!r}",
-                code='missing_highest_pallet',
-            )
-
         # Check that the total number of pallets of each colour across the whole
         # arena are less than the expected number.
         totals = collections.Counter()
