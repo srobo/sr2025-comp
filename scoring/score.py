@@ -25,6 +25,20 @@ class InvalidScoresheetException(Exception):
 
 
 def join_text(strings: Iterable[str], separator: str) -> str:
+    """
+    Construct an english-language comma separated list ending with the given
+    separator word. This enables constructs like "foo, bar and baz" given a list
+    of names.
+
+    >>> join_text(["foo", "bar", "baz"], "and")
+    "foo, bar and baz"
+
+    >>> join_text(["foo", "bar"], "or")
+    "foo or bar"
+
+    >>> join_text(["foo"], "or")
+    "foo"
+    """
     strings = tuple(strings)
 
     try:
