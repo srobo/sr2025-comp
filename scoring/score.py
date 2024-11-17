@@ -9,7 +9,12 @@ from __future__ import annotations
 import collections
 from typing import Iterable
 
-from sr2025 import DISTRICT_SCORE_MAP, RawDistrict, ZONE_COLOURS
+from sr2025 import (
+    DISTRICT_SCORE_MAP,
+    DISTRICTS_NO_HIGH_RISE,
+    RawDistrict,
+    ZONE_COLOURS,
+)
 
 TOKENS_PER_ZONE = 6
 
@@ -168,6 +173,25 @@ class Scorer:
                 f"-- must be a pallet which is present in the district.\n"
                 f"{detail}",
                 code='impossible_highest_pallet',
+            )
+
+        # Check that the "highest" pallet in districts which don't have a
+        # high-rises has another pallet to be placed on top of (pallets on the
+        # floor don't qualify for being the highest).
+        single_pallet_highest = {}
+        for name in DISTRICTS_NO_HIGH_RISE:
+            district = self._districts[name]
+            highest = district['highest']
+            num_pallets = sum(district['pallet_counts'].values())
+            if num_pallets == 1 and highest:
+                single_pallet_highest[name] = highest
+        if single_pallet_highest:
+            raise InvalidScoresheetException(
+                "Districts without a high-rise and only a single pallet cannot "
+                "have a \"highest\" pallet since pallets on the floor cannot "
+                "count as the highest.\n"
+                f"{single_pallet_highest!r}",
+                code='impossible_highest_single_pallet',
             )
 
         # Check that the total number of pallets of each colour across the whole

@@ -138,6 +138,28 @@ class ScorerTests(unittest.TestCase):
             self.districts,
         )
 
+    def test_outer_highest_self(self) -> None:
+        self.districts['outer_nw']['highest'] = 'G'
+        self.districts['outer_nw']['pallets'] = 'GG'
+        self.assertScores(
+            {
+                'GGG': 4,
+                'OOO': 0,
+            },
+            self.districts,
+        )
+
+    def test_outer_highest_use_other_team(self) -> None:
+        self.districts['outer_nw']['highest'] = 'G'
+        self.districts['outer_nw']['pallets'] = 'GO'
+        self.assertScores(
+            {
+                'GGG': 2,
+                'OOO': 1,
+            },
+            self.districts,
+        )
+
     def test_inner_single(self) -> None:
         self.districts['inner_ne']['pallets'] = 'O'
         self.assertScores(
@@ -241,6 +263,14 @@ class ScorerTests(unittest.TestCase):
         self.assertInvalidScoresheet(
             self.districts,
             code='invalid_pallets',
+        )
+
+    def test_outer_highest_requires_multiple_tokens_self(self) -> None:
+        self.districts['outer_sw']['highest'] = 'O'
+        self.districts['outer_sw']['pallets'] = 'O'
+        self.assertInvalidScoresheet(
+            self.districts,
+            code='impossible_highest_single_pallet',
         )
 
     def test_missing_district(self) -> None:
