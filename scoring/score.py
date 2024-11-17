@@ -192,11 +192,12 @@ class Scorer:
         totals = collections.Counter()
         for district in self._districts.values():
             totals += district['pallet_counts']
-        if any(x > TOKENS_PER_ZONE for x in totals.values()):
+        bad_totals = [x for x, y in totals.items() if y > TOKENS_PER_ZONE]
+        if bad_totals:
             raise InvalidScoresheetException(
-                f"Too many pallets of some kinds specified, must be no more "
-                f"than {TOKENS_PER_ZONE} of each type.\n"
-                f"{totals!r}",
+                f"Too many {join_and(repr(x) for x in bad_totals)} pallets "
+                f"specified, must be no more than {TOKENS_PER_ZONE} of each type.\n"
+                f"Totals: {totals!r}",
                 code='too_many_pallets',
             )
 
