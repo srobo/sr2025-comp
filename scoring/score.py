@@ -84,6 +84,7 @@ class Scorer:
         return scores
 
     def validate(self, other_data):
+        # Check that the right districts are specified.
         if self._districts.keys() != DISTRICT_SCORE_MAP.keys():
             missing = DISTRICT_SCORE_MAP.keys() - self._districts.keys()
             extra = self._districts.keys() - DISTRICT_SCORE_MAP.keys()
@@ -97,6 +98,7 @@ class Scorer:
                 code='invalid_districts',
             )
 
+        # Check that the "highest" pallet is a single, valid colour entry.
         bad_highest = {}
         for name, district in self._districts.items():
             highest = district['highest']
@@ -111,6 +113,7 @@ class Scorer:
                 code='invalid_highest_pallet',
             )
 
+        # Check that the pallets are valid colours.
         bad_pallets = {}
         for name, district in self._districts.items():
             extra = district['pallet_counts'].keys() - ZONE_COLOURS
@@ -124,6 +127,8 @@ class Scorer:
                 code='invalid_pallets',
             )
 
+        # Check that the "highest" pallet is accompanied by at least one pallet
+        # of that colour in the district.
         bad_highest2 = {}
         for name, district in self._districts.items():
             highest = district['highest']
@@ -151,6 +156,8 @@ class Scorer:
                 code='impossible_highest_pallet',
             )
 
+        # Check that the "highest" pallet is assigned in the case where a
+        # district has pallets from only one team.
         missing_highest = {}
         for name, district in self._districts.items():
             highest = district['highest']
@@ -166,6 +173,8 @@ class Scorer:
                 code='missing_highest_pallet',
             )
 
+        # Check that the total number of pallets of each colour across the whole
+        # arena are less than the expected number.
         totals = collections.Counter()
         for district in self._districts.values():
             totals += district['pallet_counts']
