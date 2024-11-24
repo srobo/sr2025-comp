@@ -4,8 +4,10 @@ from typing import TypedDict
 
 
 class RawDistrict(TypedDict):
+    # Single pallet colour character
     highest: str
-    pallets: str
+    # Pallet colour -> count
+    pallets: dict[str, int]
 
 
 DISTRICT_SCORE_MAP = {

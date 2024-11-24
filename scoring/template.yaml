@@ -4,31 +4,31 @@ arena_zones:
     districts:
       outer_nw:
         highest: ''
-        pallets: ''
+        pallets: {G: 0, O: 0, P: 0, Y: 0}
       outer_ne:
         highest: ''
-        pallets: ''
+        pallets: {G: 0, O: 0, P: 0, Y: 0}
       outer_se:
         highest: ''
-        pallets: ''
+        pallets: {G: 0, O: 0, P: 0, Y: 0}
       outer_sw:
         highest: ''
-        pallets: ''
+        pallets: {G: 0, O: 0, P: 0, Y: 0}
       inner_nw:
         highest: ''
-        pallets: ''
+        pallets: {G: 0, O: 0, P: 0, Y: 0}
       inner_ne:
         highest: ''
-        pallets: ''
+        pallets: {G: 0, O: 0, P: 0, Y: 0}
       inner_se:
         highest: ''
-        pallets: ''
+        pallets: {G: 0, O: 0, P: 0, Y: 0}
       inner_sw:
         highest: ''
-        pallets: ''
+        pallets: {G: 0, O: 0, P: 0, Y: 0}
       central:
         highest: ''
-        pallets: ''
+        pallets: {G: 0, O: 0, P: 0, Y: 0}
 
 match_number: 0
 teams:

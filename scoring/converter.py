@@ -15,11 +15,13 @@ from sr.comp.scorer.converter import (
     Converter as BaseConverter,
     InputForm,
     OutputForm,
+    parse_int,
+    render_int,
     ZoneId,
 )
 from sr.comp.types import ScoreArenaZonesData, ScoreData, ScoreTeamData, TLA
 
-from sr2025 import DISTRICTS, RawDistrict
+from sr2025 import DISTRICTS, RawDistrict, ZONE_COLOURS
 
 
 class SR2025ScoreTeamData(ScoreTeamData):
@@ -49,7 +51,10 @@ class Converter(BaseConverter):
         """
         return RawDistrict({
             'highest': form.get(f'district_{name}_highest', ''),
-            'pallets': form.get(f'district_{name}_pallets', ''),
+            'pallets': {
+                x: parse_int(form.get(f'district_{name}_pallets_{x}'))
+                for x in ZONE_COLOURS
+            },
         })
 
     def form_to_score(self, match: Match, form: InputForm) -> ScoreData:
@@ -93,7 +98,10 @@ class Converter(BaseConverter):
     def score_district_to_form(self, name: str, district: RawDistrict) -> OutputForm:
         return OutputForm({
             f'district_{name}_highest': district['highest'].upper(),
-            f'district_{name}_pallets': district['pallets'].upper(),
+            **{
+                f'district_{name}_pallets_{x}': render_int(district['pallets'].get(x))
+                for x in ZONE_COLOURS
+            },
         })
 
     def score_to_form(self, score: ScoreData) -> OutputForm:
@@ -132,6 +140,7 @@ class Converter(BaseConverter):
 
         for name in DISTRICTS:
             form[f'district_{name}_highest'] = ''
-            form[f'district_{name}_pallets'] = ''
+            for x in ZONE_COLOURS:
+                form[f'district_{name}_pallets_{x}'] = None
 
         return form

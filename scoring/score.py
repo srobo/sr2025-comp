@@ -19,10 +19,6 @@ from sr2025 import (
 TOKENS_PER_ZONE = 6
 
 
-class District(RawDistrict):
-    pallet_counts: collections.Counter[str]
-
-
 class InvalidScoresheetException(Exception):
     def __init__(self, message: str, *, code: str) -> None:
         super().__init__(message)
@@ -72,15 +68,13 @@ class Scorer:
         self._districts = arena_data['other']['districts']
 
         for district in self._districts.values():
-            district['pallet_counts'] = collections.Counter(
-                district['pallets'].replace(' ', ''),
-            )
+            district['pallets'] = collections.Counter(district['pallets'])
             district['highest'] = district['highest'].replace(' ', '')
 
-    def score_district_for_zone(self, name: str, district: District, zone: int) -> int:
+    def score_district_for_zone(self, name: str, district: RawDistrict, zone: int) -> int:
         colour = ZONE_COLOURS[zone]
 
-        num_tokens = district['pallet_counts'][colour]
+        num_tokens = district['pallets'][colour]
         score = num_tokens * DISTRICT_SCORE_MAP[name]
 
         if colour in district['highest']:
@@ -135,7 +129,7 @@ class Scorer:
         # Check that the pallets are valid colours.
         bad_pallets = {}
         for name, district in self._districts.items():
-            extra = district['pallet_counts'].keys() - ZONE_COLOURS
+            extra = district['pallets'].keys() - ZONE_COLOURS
             if extra:
                 bad_pallets[name] = extra
         if bad_pallets:
@@ -151,8 +145,8 @@ class Scorer:
         bad_highest2 = {}
         for name, district in self._districts.items():
             highest = district['highest']
-            if highest and highest not in district['pallet_counts']:
-                bad_highest2[name] = (highest, district['pallet_counts'].keys())
+            if highest and highest not in district['pallets']:
+                bad_highest2[name] = (highest, district['pallets'].keys())
         if bad_highest2:
             detail = "\n".join(
                 (
@@ -182,7 +176,7 @@ class Scorer:
         for name in DISTRICTS_NO_HIGH_RISE:
             district = self._districts[name]
             highest = district['highest']
-            num_pallets = sum(district['pallet_counts'].values())
+            num_pallets = sum(district['pallets'].values())
             if num_pallets == 1 and highest:
                 single_pallet_highest[name] = highest
         if single_pallet_highest:
@@ -198,7 +192,7 @@ class Scorer:
         # arena are less than the expected number.
         totals = collections.Counter()
         for district in self._districts.values():
-            totals += district['pallet_counts']
+            totals += district['pallets']
         bad_totals = [x for x, y in totals.items() if y > TOKENS_PER_ZONE]
         if bad_totals:
             raise InvalidScoresheetException(

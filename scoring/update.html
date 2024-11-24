@@ -15,17 +15,19 @@
     </foreignObject>
 {% endmacro %}
 
-{% macro input_pallets(x, y, name) %}
-    <foreignObject x="{{ x + 5 }}" y="{{ y }}" width="100" height="30">
+{% macro input_pallets(x, y, name, colour_symbol) %}
+    <foreignObject x="{{ x }}" y="{{ y }}" width="20" height="30">
+        <label for="district_{{ name }}_pallets_{{ colour_symbol }}">{{ colour_symbol }}</label>
+    </foreignObject>
+    <foreignObject x="{{ x + 20 }}" y="{{ y }}" width="30" height="30">
         <input
             class="pallets tokens"
-            placeholder="All Pallets"
             type="text"
-            id="district_{{ name }}_pallets"
-            name="district_{{ name }}_pallets"
-            value="{{ request.form.get('district_{}_pallets'.format(name)) | empty_if_none }}"
+            id="district_{{ name }}_pallets_{{ colour_symbol }}"
+            name="district_{{ name }}_pallets_{{ colour_symbol }}"
+            value="{{ request.form.get('district_{}_pallets_{}'.format(name, colour_symbol)) | empty_if_none }}"
             onkeyup="token_input_change(this);"
-            pattern="^[GOPY]*$"
+            pattern="^\d*$"
         />
     </foreignObject>
 {% endmacro %}
@@ -33,8 +35,11 @@
 {% macro district(name, x, y) %}
     <g id="district-{{ corner }}">
         <rect height="110" width="110" stroke="#000" x="{{ x }}" y="{{ y }}" stroke-width="2" fill="#fff"/>
-        {{ input_highest(x + 2.5, y + 15, name) }}
-        {{ input_pallets(x, y + 65, name) }}
+        {{ input_highest(x + 2.5, y + 5, name) }}
+        {{ input_pallets(x, y + 40, name, 'O') }}
+        {{ input_pallets(x + 55, y + 40, name, 'P') }}
+        {{ input_pallets(x + 55, y + 75, name, 'Y') }}
+        {{ input_pallets(x, y + 75, name, 'G') }}
     </g>
 {% endmacro %}
 

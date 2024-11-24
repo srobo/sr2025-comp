@@ -7,6 +7,7 @@ Not really part of a compstate, though the SRComp validation GitHub Action will
 auto detect this and run the tests.
 """
 
+import copy
 import pathlib
 import random
 import sys
@@ -62,15 +63,15 @@ class ScorerTests(unittest.TestCase):
             f"Wrong error code, message was: {cm.exception}",
         )
 
-    def setUp(self):
+    def setUp(self) -> None:
         self.teams_data = {
             'GGG': {'zone': 0, 'present': True, 'left_starting_zone': False},
             'OOO': {'zone': 1, 'present': True, 'left_starting_zone': False},
         }
-        self.districts = {
+        self.districts: dict[str, RawDistrict] = {
             name: RawDistrict({
                 'highest': '',
-                'pallets': '',
+                'pallets': {},
             })
             for name in DISTRICTS
         }
@@ -108,7 +109,7 @@ class ScorerTests(unittest.TestCase):
         )
 
     def test_outer_single(self) -> None:
-        self.districts['outer_nw']['pallets'] = 'G'
+        self.districts['outer_nw']['pallets'] = {'G': 1}
         self.assertScores(
             {
                 'GGG': 1,
@@ -118,7 +119,7 @@ class ScorerTests(unittest.TestCase):
         )
 
     def test_outer_multiple(self) -> None:
-        self.districts['outer_nw']['pallets'] = 'GGO'
+        self.districts['outer_nw']['pallets'] = {'G': 2, 'O': 1}
         self.assertScores(
             {
                 'GGG': 2,
@@ -129,7 +130,7 @@ class ScorerTests(unittest.TestCase):
 
     def test_outer_highest(self) -> None:
         self.districts['outer_nw']['highest'] = 'G'
-        self.districts['outer_nw']['pallets'] = 'GGO'
+        self.districts['outer_nw']['pallets'] = {'G': 2, 'O': 1}
         self.assertScores(
             {
                 'GGG': 4,
@@ -140,7 +141,7 @@ class ScorerTests(unittest.TestCase):
 
     def test_outer_highest_self(self) -> None:
         self.districts['outer_nw']['highest'] = 'G'
-        self.districts['outer_nw']['pallets'] = 'GG'
+        self.districts['outer_nw']['pallets'] = {'G': 2}
         self.assertScores(
             {
                 'GGG': 4,
@@ -151,7 +152,7 @@ class ScorerTests(unittest.TestCase):
 
     def test_outer_highest_use_other_team(self) -> None:
         self.districts['outer_nw']['highest'] = 'G'
-        self.districts['outer_nw']['pallets'] = 'GO'
+        self.districts['outer_nw']['pallets'] = {'G': 1, 'O': 1}
         self.assertScores(
             {
                 'GGG': 2,
@@ -161,7 +162,7 @@ class ScorerTests(unittest.TestCase):
         )
 
     def test_inner_single(self) -> None:
-        self.districts['inner_ne']['pallets'] = 'O'
+        self.districts['inner_ne']['pallets'] = {'O': 1}
         self.assertScores(
             {
                 'GGG': 0,
@@ -171,7 +172,7 @@ class ScorerTests(unittest.TestCase):
         )
 
     def test_inner_multiple(self) -> None:
-        self.districts['inner_ne']['pallets'] = 'GOO'
+        self.districts['inner_ne']['pallets'] = {'G': 1, 'O': 2}
         self.assertScores(
             {
                 'GGG': 2,
@@ -182,7 +183,7 @@ class ScorerTests(unittest.TestCase):
 
     def test_inner_highest(self) -> None:
         self.districts['inner_ne']['highest'] = 'O'
-        self.districts['inner_ne']['pallets'] = 'GOO'
+        self.districts['inner_ne']['pallets'] = {'G': 1, 'O': 2}
         self.assertScores(
             {
                 'GGG': 2,
@@ -192,7 +193,7 @@ class ScorerTests(unittest.TestCase):
         )
 
     def test_central_single(self) -> None:
-        self.districts['central']['pallets'] = 'O'
+        self.districts['central']['pallets'] = {'O': 1}
         self.assertScores(
             {
                 'GGG': 0,
@@ -202,7 +203,7 @@ class ScorerTests(unittest.TestCase):
         )
 
     def test_central_multiple(self) -> None:
-        self.districts['central']['pallets'] = 'GOO'
+        self.districts['central']['pallets'] = {'G': 1, 'O': 2}
         self.assertScores(
             {
                 'GGG': 3,
@@ -213,7 +214,7 @@ class ScorerTests(unittest.TestCase):
 
     def test_central_highest(self) -> None:
         self.districts['central']['highest'] = 'O'
-        self.districts['central']['pallets'] = 'GOO'
+        self.districts['central']['pallets'] = {'G': 1, 'O': 2}
         self.assertScores(
             {
                 'GGG': 3,
@@ -224,9 +225,9 @@ class ScorerTests(unittest.TestCase):
 
     def test_mixed(self) -> None:
         self.teams_data['OOO']['left_starting_zone'] = True
-        self.districts['outer_sw']['pallets'] = 'O'
-        self.districts['inner_sw']['pallets'] = 'G'
-        self.districts['central']['pallets'] = 'GO'
+        self.districts['outer_sw']['pallets'] = {'O': 1}
+        self.districts['inner_sw']['pallets'] = {'G': 1}
+        self.districts['central']['pallets'] = {'G': 1, 'O': 1}
         self.assertScores(
             {
                 'GGG': 5,
@@ -236,11 +237,11 @@ class ScorerTests(unittest.TestCase):
         )
 
     def test_mixed_highest(self) -> None:
-        self.districts['outer_sw']['pallets'] = 'O'
+        self.districts['outer_sw']['pallets'] = {'O': 1}
         self.districts['inner_sw']['highest'] = 'G'
-        self.districts['inner_sw']['pallets'] = 'G'
+        self.districts['inner_sw']['pallets'] = {'G': 1}
         self.districts['central']['highest'] = 'G'
-        self.districts['central']['pallets'] = 'GO'
+        self.districts['central']['pallets'] = {'G': 1, 'O': 1}
         self.assertScores(
             {
                 'GGG': 10,
@@ -259,7 +260,7 @@ class ScorerTests(unittest.TestCase):
         )
 
     def test_bad_pallet_letter(self) -> None:
-        self.districts['outer_sw']['pallets'] = 'o'
+        self.districts['outer_sw']['pallets'] = {'o': 1}
         self.assertInvalidScoresheet(
             self.districts,
             code='invalid_pallets',
@@ -267,7 +268,7 @@ class ScorerTests(unittest.TestCase):
 
     def test_outer_highest_requires_multiple_tokens_self(self) -> None:
         self.districts['outer_sw']['highest'] = 'O'
-        self.districts['outer_sw']['pallets'] = 'O'
+        self.districts['outer_sw']['pallets'] = {'O': 1}
         self.assertInvalidScoresheet(
             self.districts,
             code='impossible_highest_single_pallet',
@@ -281,7 +282,7 @@ class ScorerTests(unittest.TestCase):
         )
 
     def test_extra_district(self) -> None:
-        self.districts['bees'] = dict(self.districts['central'])
+        self.districts['bees'] = copy.deepcopy(self.districts['central'])
         self.assertInvalidScoresheet(
             self.districts,
             code='invalid_districts',
@@ -291,7 +292,7 @@ class ScorerTests(unittest.TestCase):
 
     def test_spacey(self) -> None:
         self.districts['outer_nw']['highest'] = '  O '
-        self.districts['outer_nw']['pallets'] = '  G O  Y '
+        self.districts['outer_nw']['pallets'] = {'G': 1, 'O': 1, 'Y': 1}
         self.assertScores(
             {
                 'GGG': 1,
@@ -311,14 +312,14 @@ class ScorerTests(unittest.TestCase):
 
     def test_highest_when_team_not_present(self) -> None:
         self.districts['outer_sw']['highest'] = 'Y'
-        self.districts['outer_sw']['pallets'] = 'OP'
+        self.districts['outer_sw']['pallets'] = {'O': 1, 'P': 1}
         self.assertInvalidScoresheet(
             self.districts,
             code='impossible_highest_pallet',
         )
 
     def test_too_many_pallets(self) -> None:
-        self.districts['outer_sw']['pallets'] = ('G' * 7) + 'O'
+        self.districts['outer_sw']['pallets'] = {'G': 7, 'O': 1}
         self.assertInvalidScoresheet(
             self.districts,
             code='too_many_pallets',
