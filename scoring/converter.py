@@ -90,10 +90,10 @@ class Converter(BaseConverter):
 
     def score_team_to_form(self, tla: TLA, info: ScoreTeamData) -> OutputForm:
         zone_id = info['zone']
-        return {
+        return OutputForm({
             **super().score_team_to_form(tla, info),
             f'left_starting_zone_{zone_id}': info.get('left_starting_zone', False),
-        }
+        })
 
     def score_district_to_form(self, name: str, district: RawDistrict) -> OutputForm:
         return OutputForm({
