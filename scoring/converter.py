@@ -37,7 +37,7 @@ class Converter(BaseConverter):
         """
         Prepare a team's scoring data for saving in a score dict.
 
-        This is given a zone as form data is all keyed by zone.
+        This is also given a `ZoneId` since form data are all keyed by zone.
         """
         return {
             **super().form_team_to_score(form, zone_id),
