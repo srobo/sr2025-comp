@@ -170,7 +170,7 @@ class Scorer:
             )
 
         # Check that the "highest" pallet in districts which don't have a
-        # high-rises has another pallet to be placed on top of (pallets on the
+        # high-rise has another pallet to be placed on top of (pallets on the
         # floor don't qualify for being the highest).
         single_pallet_highest = {}
         for name in DISTRICTS_NO_HIGH_RISE:
