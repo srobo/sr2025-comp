@@ -1,5 +1,85 @@
 {% extends "_update.html" %}
 
-{% block valid_token_regex %}
-var valid_token_regex = /^[GOPY]*$/;
+{% macro input_highest(x, y, name) %}
+    <foreignObject x="{{ x + 5 }}" y="{{ y }}" width="95" height="30">
+        <input
+            class="highest tokens"
+            placeholder="Highest"
+            type="text"
+            id="district_{{ name }}_highest"
+            name="district_{{ name }}_highest"
+            value="{{ request.form.get('district_{}_highest'.format(name)) | empty_if_none }}"
+            onkeyup="token_input_change(this);"
+            pattern="^[GOPY]?$"
+        />
+    </foreignObject>
+{% endmacro %}
+
+{% macro input_pallets(x, y, name, colour_symbol, corner) %}
+    <foreignObject x="{{ x }}" y="{{ y }}" width="20" height="30">
+        <label
+            for="district_{{ name }}_pallets_{{ colour_symbol }}"
+            style="font-weight: normal; text-shadow: 0 0 3px {{ corners[corner].colour }};"
+        >
+            {{ colour_symbol }}
+        </label>
+    </foreignObject>
+    <foreignObject x="{{ x + 20 }}" y="{{ y }}" width="30" height="30">
+        <input
+            class="pallets tokens"
+            type="text"
+            id="district_{{ name }}_pallets_{{ colour_symbol }}"
+            name="district_{{ name }}_pallets_{{ colour_symbol }}"
+            value="{{ request.form.get('district_{}_pallets_{}'.format(name, colour_symbol)) | empty_if_none }}"
+            onkeyup="token_input_change(this);"
+            pattern="^\d*$"
+        />
+    </foreignObject>
+{% endmacro %}
+
+{% macro district(name, x, y) %}
+    <g id="district-{{ corner }}">
+        <rect height="110" width="110" stroke="#000" x="{{ x }}" y="{{ y }}" stroke-width="2" fill="#fff"/>
+        {{ input_highest(x + 2.5, y + 5, name) }}
+        {{ input_pallets(x, y + 40, name, 'O', 1) }}
+        {{ input_pallets(x + 55, y + 40, name, 'P', 2) }}
+        {{ input_pallets(x + 55, y + 75, name, 'Y', 3) }}
+        {{ input_pallets(x, y + 75, name, 'G', 0) }}
+    </g>
+{% endmacro %}
+
+{% macro zone(corner, x, y) %}
+    <g id="zone-{{ corner }}">
+        <text><tspan x="{{ x + 130 }}" y="{{ y }}" stroke="{{ corners[corner].colour }}" font-size="1.75em" fill="#4d4d4d">Zone {{ corner }}</tspan></text>
+        {{ input_tla(x, y + 15, corner) }}
+        {{ input_present(x + 160, y + 15, corner) }}
+        {{ input_disqualified(x + 120, y + 45, corner) }}
+        {{ input_checkbox(x + 70, y + 75, 170, corner, "left_starting_zone", "Left Starting Zone") }}
+    </g>
+{% endmacro %}
+
+{% block form_content %}
+<svg xmlns="http://www.w3.org/2000/svg" height="940" width="600" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <rect height="600" width="600" stroke="#000" y="165" x="0" stroke-width="2" fill="#f4f3ff"/>
+
+    <g id="zones">
+        {# Yes, zone 0 deliberately bottom left #}
+        {{ zone(0, 10, 805) }}
+        {{ zone(1, 10, 40) }}
+        {{ zone(2, 320, 40) }}
+        {{ zone(3, 320, 805) }}
+    </g>
+
+    <g id="districts" transform="translate(0 165) translate(25 25)">
+        {{ district('outer_nw', 0, 0) }}
+        {{ district('outer_ne', 440, 0) }}
+        {{ district('outer_se', 440, 440) }}
+        {{ district('outer_sw', 0, 440) }}
+        {{ district('inner_nw', 110, 110) }}
+        {{ district('inner_ne', 330, 110) }}
+        {{ district('inner_se', 330, 330) }}
+        {{ district('inner_sw', 110, 330) }}
+        {{ district('central', 220, 220) }}
+    </g>
+</svg>
 {% endblock %}
