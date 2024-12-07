@@ -15,9 +15,14 @@
     </foreignObject>
 {% endmacro %}
 
-{% macro input_pallets(x, y, name, colour_symbol) %}
+{% macro input_pallets(x, y, name, colour_symbol, corner) %}
     <foreignObject x="{{ x }}" y="{{ y }}" width="20" height="30">
-        <label for="district_{{ name }}_pallets_{{ colour_symbol }}">{{ colour_symbol }}</label>
+        <label
+            for="district_{{ name }}_pallets_{{ colour_symbol }}"
+            style="font-weight: normal; text-shadow: 0 0 3px {{ corners[corner].colour }};"
+        >
+            {{ colour_symbol }}
+        </label>
     </foreignObject>
     <foreignObject x="{{ x + 20 }}" y="{{ y }}" width="30" height="30">
         <input
@@ -36,10 +41,10 @@
     <g id="district-{{ corner }}">
         <rect height="110" width="110" stroke="#000" x="{{ x }}" y="{{ y }}" stroke-width="2" fill="#fff"/>
         {{ input_highest(x + 2.5, y + 5, name) }}
-        {{ input_pallets(x, y + 40, name, 'O') }}
-        {{ input_pallets(x + 55, y + 40, name, 'P') }}
-        {{ input_pallets(x + 55, y + 75, name, 'Y') }}
-        {{ input_pallets(x, y + 75, name, 'G') }}
+        {{ input_pallets(x, y + 40, name, 'O', 1) }}
+        {{ input_pallets(x + 55, y + 40, name, 'P', 2) }}
+        {{ input_pallets(x + 55, y + 75, name, 'Y', 3) }}
+        {{ input_pallets(x, y + 75, name, 'G', 0) }}
     </g>
 {% endmacro %}
 
