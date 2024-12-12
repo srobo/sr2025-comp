@@ -3,4 +3,24 @@
 # Match numbers are 0-N, preferably in order, and must not omit any values.
 # The list of teams is ordered -- zone 0 first up to the Nth zone.
 
-matches: {}
+matches:
+  0:
+    main: [MDN, RGS, HRO, null]
+  1:
+    main: [RGS, HRO, MDN, null]
+  2:
+    main: [RGS, HRO, null, MDN]
+  3:
+    main: [MDN, null, HRO, RGS]
+  4:
+    main: [MDN, null, HRO, RGS]
+  5:
+    main: [RGS, null, HRO, MDN]
+  6:
+    main: [HRO, RGS, null, MDN]
+  7:
+    main: [RGS, null, HRO, MDN]
+  8:
+    main: [HRO, MDN, null, RGS]
+  9:
+    main: [HRO, null, MDN, RGS]
