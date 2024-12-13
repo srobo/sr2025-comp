@@ -1,26 +1,26 @@
-# Description of the league matches to be played.
+ Description of the league matches to be played.
 # The format is `matches` -> number -> arena -> list of teams.
 # Match numbers are 0-N, preferably in order, and must not omit any values.
 # The list of teams is ordered -- zone 0 first up to the Nth zone.
 
 matches:
   0:
-    main: [MDN, RGS, HRO, null]
+    main: [MDN, RGS, HRO, HRS]
   1:
-    main: [RGS, HRO, MDN, null]
+    main: [RGS, HRO, MDN, HRS]
   2:
-    main: [RGS, HRO, null, MDN]
+    main: [RGS, HRO, HRS, MDN]
   3:
-    main: [MDN, null, HRO, RGS]
+    main: [MDN, HRS, HRO, RGS]
   4:
-    main: [MDN, null, HRO, RGS]
+    main: [MDN, HRS, HRO, RGS]
   5:
-    main: [RGS, null, HRO, MDN]
+    main: [RGS, HRS, HRO, MDN]
   6:
-    main: [HRO, RGS, null, MDN]
+    main: [HRO, RGS, HRS, MDN]
   7:
-    main: [RGS, null, HRO, MDN]
+    main: [RGS, HRS, HRO, MDN]
   8:
-    main: [HRO, MDN, null, RGS]
+    main: [HRO, MDN, HRS, RGS]
   9:
-    main: [HRO, null, MDN, RGS]
+    main: [HRO, HRS, MDN, RGS]
