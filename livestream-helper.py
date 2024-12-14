@@ -20,6 +20,7 @@ the next match.
 
 import argparse
 import logging
+import statistics
 import sys
 from collections.abc import Iterable
 from pathlib import Path
@@ -27,7 +28,7 @@ from pathlib import Path
 from sr.comp.comp import SRComp
 from sr.comp.match_period import Match
 from sr.comp.matches import parse_ranges
-from sr.comp.types import MatchNumber
+from sr.comp.types import TLA, MatchNumber
 
 ZONE_COLOUR_MAP = dict(enumerate([
     'large_green_square',
@@ -46,23 +47,47 @@ ORDINALS = {
 logging.basicConfig(stream=sys.stderr)
 
 
-def matches(comp: SRComp, numbers: Iterable[MatchNumber]) -> Iterable[Match]:
+def get_matches(comp: SRComp, numbers: Iterable[MatchNumber]) -> Iterable[Match]:
     for num in numbers:
         slot = comp.schedule.matches[num]
         yield from slot.values()
 
 
+def team_mean_game_points(
+    comp: SRComp,
+    matches: Iterable[Match],
+    team: TLA,
+) -> float:
+    return statistics.mean(
+        score.game[team]
+        for match in matches
+        if (score := comp.scores.get_scores(match)) is not None
+    )
+
+
 def main(match_numbers: set[MatchNumber], compstate_dir: Path) -> None:
     comp = SRComp(compstate_dir)
 
-    for match in matches(comp, match_numbers):
+    matches = list(get_matches(comp, sorted(match_numbers)))
+
+    for match in matches:
         team_zone_map = dict(zip(match.teams, ZONE_COLOUR_MAP.items()))
+        past_matches = [m for m in matches if m.num < match.num]
 
         print('<br>')
         print('<span style="white-space: pre">', end='')
         print(f"<strong>{match.display_name}:</strong>")
         for team, (zone_id, colour) in team_zone_map.items():
-            print(f":{colour}: Zone {zone_id} 	{team} 	TEAM-COMMENT-HERE")
+            print(f":{colour}: Zone {zone_id} 	{team} 	TEAM-COMMENT-HERE", end='')
+            if team and past_matches:
+                mean_game_points = team_mean_game_points(
+                    comp,
+                    past_matches,
+                    team,
+                )
+                print(f". Mean game points: {mean_game_points}")
+            else:
+                print()
         print('</span>')
 
         print('<br>')
