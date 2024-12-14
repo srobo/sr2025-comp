@@ -79,6 +79,7 @@ def main(match_numbers: set[MatchNumber], compstate_dir: Path) -> None:
         print(f"<strong>{match.display_name}:</strong>")
         for team, (zone_id, colour) in team_zone_map.items():
             print(f":{colour}: Zone {zone_id} 	{team} 	TEAM-COMMENT-HERE", end='')
+            # TODO: annotate first & final appearances
             if team and past_matches:
                 mean_game_points = team_mean_game_points(
                     comp,
