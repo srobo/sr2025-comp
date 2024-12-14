@@ -40,6 +40,12 @@ delays: []
 # after a period ends.
 match_periods:
   league:
+  - start_time: 2024-12-14 13:10:00+00:00
+    end_time: 2024-12-14 14:50:00+00:00
+    max_end_time: 2024-12-14 15:00:00+00:00
+    description: Virtual friendlies
+
+#
   - start_time: 2025-02-08 13:10:00+00:00
     end_time: 2025-02-08 14:50:00+00:00
     max_end_time: 2025-02-08 15:00:00+00:00
