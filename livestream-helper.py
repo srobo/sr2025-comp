@@ -86,7 +86,7 @@ def main(match_numbers: set[MatchNumber], compstate_dir: Path) -> None:
                     past_matches,
                     team,
                 )
-                print(f". Mean game points: {mean_game_points}")
+                print(f". Mean game points: {mean_game_points:.2g}")
             else:
                 print()
         print('</span>')
