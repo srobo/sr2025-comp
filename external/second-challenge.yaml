@@ -1,0 +1,39 @@
+scores:
+  - team: ABS
+    league_points: 12
+  - team: BPV
+    league_points: 12
+  - team: HAB
+    league_points: 12
+  - team: HAM
+    league_points: 12
+  - team: HAY
+    league_points: 12
+  - team: HRO
+    league_points: 12
+  - team: HZW
+    league_points: 12
+  - team: KEG
+    league_points: 12
+  - team: KEV
+    league_points: 12
+  - team: MAI
+    league_points: 12
+  - team: MDN
+    league_points: 12
+  - team: PSC
+    league_points: 12
+  - team: QMC
+    league_points: 12
+  - team: RGS
+    league_points: 12
+  - team: SHK
+    league_points: 12
+  - team: SOG
+    league_points: 12
+  - team: THS
+    league_points: 12
+  - team: TLC
+    league_points: 12
+  - team: WGS
+    league_points: 12
