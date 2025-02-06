@@ -42,7 +42,7 @@ match_periods:
   league:
   - start_time: 2025-02-08 13:10:00+00:00
     end_time: 2025-02-08 15:05:00+00:00
-    max_end_time: 2025-02-08 15:15:00+00:00
+    max_end_time: 2025-02-08 15:10:00+00:00
     description: Virtual league
 
 #
