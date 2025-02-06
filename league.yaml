@@ -1,6 +1,139 @@
-# Description of the league matches to be played.
-# The format is `matches` -> number -> arena -> list of teams.
-# Match numbers are 0-N, preferably in order, and must not omit any values.
-# The list of teams is ordered -- zone 0 first up to the Nth zone.
-
-matches: {}
+matches:
+  0:
+    main:
+    - PSC
+    - QMC
+    - BPV
+    - HWM
+  1:
+    main:
+    - SHK
+    - KEV
+    - KEG
+    - BRK
+  2:
+    main:
+    - HAB
+    - NHH
+    - RGS
+    - HAM
+  3:
+    main:
+    - HAY
+    - WGS
+    - CLY
+    - HRO
+  4:
+    main:
+    - HZW
+    - SOG
+    - TLC
+    - MDN
+  5:
+    main:
+    - ABS
+    - HRO
+    - PSC
+    - SHK
+  6:
+    main:
+    - BRK
+    - HWM
+    - NHH
+    - HAY
+  7:
+    main:
+    - KEV
+    - THS
+    - WGS
+    - MAI
+  8:
+    main:
+    - QMC
+    - KEG
+    - HAB
+    - HZW
+  9:
+    main:
+    - BPV
+    - HAM
+    - SOG
+    - CLY
+  10:
+    main:
+    - THS
+    - TLC
+    - HAY
+    - RGS
+  11:
+    main:
+    - WGS
+    - BRK
+    - HZW
+    - PSC
+  12:
+    main:
+    - NHH
+    - MDN
+    - ABS
+    - KEV
+  13:
+    main:
+    - CLY
+    - SHK
+    - THS
+    - QMC
+  14:
+    main:
+    - RGS
+    - MAI
+    - BRK
+    - BPV
+  15:
+    main:
+    - KEG
+    - TLC
+    - HRO
+    - NHH
+  16:
+    main:
+    - HAM
+    - ABS
+    - HWM
+    - WGS
+  17:
+    main:
+    - MAI
+    - PSC
+    - MDN
+    - HAB
+  18:
+    main:
+    - HZW
+    - RGS
+    - KEV
+    - CLY
+  19:
+    main:
+    - SOG
+    - HAY
+    - QMC
+    - ABS
+  20:
+    main:
+    - MDN
+    - BPV
+    - THS
+    - KEG
+  21:
+    main:
+    - TLC
+    - MAI
+    - SHK
+    - HAM
+  22:
+    main:
+    - HWM
+    - HAB
+    - HRO
+    - SOG
