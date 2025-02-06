@@ -139,8 +139,14 @@ matches:
     - SOG
   23:
     main:
+    - DCS
+    - GHS
+    - JAG
+    - RTS
+  24:
+    main:
+    - TMD
+    - WMC
     - HRS
-    - HAB
-    - PSC
-    - CLY
+    - 
   
