@@ -7,8 +7,8 @@
 match_slot_lengths:
   pre: 60
   match: 150
-  post: 90
-  total: 300
+  post: 60    # 90 after virtual league
+  total: 270  # 300 after virtual league
 #
 # Various staging related times, in seconds before the actual match start
 staging:
@@ -41,7 +41,7 @@ delays: []
 match_periods:
   league:
   - start_time: 2025-02-08 13:10:00+00:00
-    end_time: 2025-02-08 15:00:00+00:00
+    end_time: 2025-02-08 14:49:00+00:00   # 2025-02-08 15:00:00+00:00 after virtual league
     max_end_time: 2025-02-08 15:10:00+00:00
     description: Virtual league
 
