@@ -145,8 +145,7 @@ matches:
     - RTS
   24:
     main:
-    - TMD
+    -
     - WMC
     - HRS
-    - 
-  
+    -
