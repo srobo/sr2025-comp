@@ -141,7 +141,7 @@ matches:
     main:
     - DCS
     - GHS
-    - JAG
+    -
     - RTS
   24:
     main:

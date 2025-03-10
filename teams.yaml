@@ -38,9 +38,6 @@ teams:
     HZW:
         name: Hazelwick School
         rookie: false
-    JAG:
-        name: Tokyo
-        rookie: true
     KEG:
         name: King Edward VI Grammar School
         rookie: false
