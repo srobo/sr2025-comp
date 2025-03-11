@@ -14,9 +14,6 @@ teams:
     DCS:
         name: Dr Challoner's Grammar School
         rookie: true
-    GHS:
-        name: Guildford High School
-        rookie: true
     HAB:
         name: Haberdashers’ Boys’ School
         rookie: false

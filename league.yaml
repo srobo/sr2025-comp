@@ -166,7 +166,7 @@ matches:
     - HWM
     - HAB
     - HZW
-    - GHS
+    - null
   28:
     main:
     - PSC
@@ -218,7 +218,7 @@ matches:
   36:
     main:
     - RTS
-    - GHS
+    - null
     - BRK
     - SOG
   37:
@@ -261,7 +261,7 @@ matches:
     main:
     - BPV
     - SHK
-    - GHS
+    - null
     - PSC
   44:
     main:
@@ -290,7 +290,7 @@ matches:
   48:
     main:
     - QMC
-    - GHS
+    - null
     - CLY
     - ABS
   49:
@@ -331,7 +331,7 @@ matches:
     - ABS
   55:
     main:
-    - GHS
+    - null
     - WMC
     - DCS
     - MDN
@@ -376,7 +376,7 @@ matches:
     - HAM
     - WGS
     - HRS
-    - GHS
+    - null
   63:
     main:
     - MDN
@@ -403,7 +403,7 @@ matches:
     - KEG
   67:
     main:
-    - GHS
+    - null
     - RGS
     - NHH
     - HAM
