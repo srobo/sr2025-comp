@@ -21,7 +21,9 @@ staging:
   # How long before the start of the match to signal to shepherds they
   # should start looking for teams
   signal_shepherds:
-    Shepherd Name: 180
+    Shepherd Level 3 North: 180
+    Shepherd Level 3 South: 180
+    Shepherd Level 2: 180
   # How long before the start of the match to signal to teams they should
   # go to staging
   signal_teams: 180

@@ -1,6 +1,12 @@
 # List of shepherds within the venue and the regions for which they are each
 # responsible.
 shepherds:
-  - name: Shepherd Name
-    colour: palegreen  # CSS compatible colour string
-    regions: [fixed-string-region-id]
+  - name: Shepherd Level 3 North
+    colour: '#2222FF' # Dark blue
+    regions: [level-3-north]
+  - name: Shepherd Level 3 South
+    colour: '#ff0000' # Red
+    regions: [level-3-south]
+  - name: Shepherd Level 2
+    colour: '#00ffff' # Cyan
+    regions: [level-2]

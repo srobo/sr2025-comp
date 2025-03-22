@@ -1,33 +1,41 @@
 # List of regions within the venue and the teams which are in that area.
 # Used for the shepherding screens.
 teams:
-  - name: fixed-string-region-id
-    display_name: Human Readable Region Name
+  - name: level-3-north
+    display_name: Shepherd Level 3 North
     teams:
-      - ABS
-      - BPV
-      - BRK
-      - CLY
-      - DCS
-      - HAB
-      - HAM
-      - HAY
-      - HRO
-      - HRS
-      - HWM
-      - HZW
-      - KEG
       - KEV
-      - MAI
-      - MDN
+      - HRS
+      - BPV
+      - HAY
+      - BRK
       - NHH
-      - PSC
-      - QMC
       - RGS
-      - RTS
-      - SHK
-      - SOG
+      - KEG
+      - DCS
+      - ABS
+      - MDN
+  
+  - name: level-3-south
+    display_name: Shepherd Level 3 South
+    teams:
+      - HRO
+      - HWM
+      - PSC
+      - HAB
+      - CLY
+      - HAM
       - THS
-      - TLC
+      - MAI
+  
+  - name: level-2
+    display_name: Shepherd Level 2
+    teams:
       - WGS
       - WMC
+      - TLC
+      - QMC
+      - SOG
+      - RTS
+      - SHK
+      - HZW
