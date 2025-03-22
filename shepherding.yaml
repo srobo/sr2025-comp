@@ -2,10 +2,10 @@
 # responsible.
 shepherds:
   - name: Shepherd Level 3 North
-    colour: '#2222FF' # Dark blue
+    colour: '#6666ff' # Dark blue
     regions: [level-3-north]
   - name: Shepherd Level 3 South
-    colour: '#ff0000' # Red
+    colour: '#ff4444' # Red
     regions: [level-3-south]
   - name: Shepherd Level 2
     colour: '#00ffff' # Cyan
