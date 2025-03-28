@@ -15,7 +15,7 @@ teams:
       - DCS
       - ABS
       - MDN
-  
+
   - name: level-3-south
     display_name: Shepherd Level 3 South
     teams:
@@ -27,7 +27,7 @@ teams:
       - HAM
       - THS
       - MAI
-  
+
   - name: level-2
     display_name: Shepherd Level 2
     teams:
