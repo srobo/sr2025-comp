@@ -11,9 +11,6 @@ teams:
     CLY:
         name: The College of Richard Collyer
         rookie: false
-    DCS:
-        name: Dr Challoner's Grammar School
-        rookie: true
     HAB:
         name: Haberdashers’ Boys’ School
         rookie: false
