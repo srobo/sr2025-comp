@@ -3,7 +3,7 @@ teams:
         name: Abingdon School
         rookie: false
     BPV:
-        name: Barton Peveril College
+        name: Barton Peveril Sixth Form College
         rookie: false
     BRK:
         name: Brockenhurst College
@@ -12,16 +12,16 @@ teams:
         name: The College of Richard Collyer
         rookie: false
     HAB:
-        name: Haberdashers’ Boys’ School
+        name: Haberdashers' Boys' School
         rookie: false
     HAM:
-        name: Hampton School
+        name: Hampton & Lady Eleanor Holles Schools
         rookie: false
     HAY:
         name: Haydon School
         rookie: false
     HRO:
-        name: Headington Rye School Oxford
+        name: Headington Rye Oxford
         rookie: false
     HRS:
         name: Hills Road Sixth Form College
@@ -63,13 +63,13 @@ teams:
         name: School of St Helen and St Katharine
         rookie: true
     SOG:
-        name: Saint Olaves Grammar School
+        name: St. Olave's Grammar School
         rookie: false
     THS:
         name: The Highfield School
         rookie: true
     TLC:
-        name: The Ladies College
+        name: The Ladies' College
         rookie: false
     WGS:
         name: Wisbech Grammar School
