@@ -116,22 +116,22 @@ static_knockout:
         arena: main
         display_name: Upper Round 2 Match 1
         start_time: 2024-04-13 13:09:00+01:00
-        teams: [S3, '001', S6, S11]
+        teams: [S3, '011', S6, S11]
       1:
         arena: main
         display_name: Upper Round 2 Match 2
         start_time: 2024-04-13 13:14:00+01:00
-        teams: [S4, '011', S5, S12]
+        teams: [S4, '001', S5, S12]
       2:
         arena: main
         display_name: Upper Round 2 Match 3
         start_time: 2024-04-13 13:19:00+01:00
-        teams: [S1, '000', S8, S9]
+        teams: [S1, '010', S8, S9]
       3:
         arena: main
         display_name: Upper Round 2 Match 4
         start_time: 2024-04-13 13:24:00+01:00
-        teams: [S2, '010', S7, S10]
+        teams: [S2, '000', S7, S10]
     2:  # Lower Round 1
       0:
         arena: main
