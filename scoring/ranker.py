@@ -4,7 +4,7 @@ from typing import Collection, Mapping
 
 from league_ranker import LeaguePoints, RankedPosition, TZone
 from sr.comp.ranker import default_calc_ranked_points
-from sr.comp.types import MatchId, MatchNumber
+from sr.comp.types import MatchId, MatchNumber, CalcRankedPointsHook
 
 FIRST_PHYSICAL_MATCH_NUMBER = MatchNumber(23)
 
@@ -29,3 +29,7 @@ def calc_ranked_points(
         return {k: LeaguePoints(v * 2) for k, v in points.items()}
 
     return points
+
+
+_bad: str = calc_ranked_points
+_good: CalcRankedPointsHook = calc_ranked_points
