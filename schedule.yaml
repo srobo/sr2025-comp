@@ -1,6 +1,8 @@
 # Primary description of the overall schedule of the competition.
 #
 # All durations are in seconds.
+# 
+# Knockout schedule for 19-20 teams.
 
 #
 # Matches are played within slots, set their lengths:
@@ -85,9 +87,116 @@ league:
   extra_spacing: []
 
 knockout:
-  round_spacing: 300 # Delay between knockout rounds
-  final_delay: 180   # Extra delay before the finals
-  single_arena:
-    rounds: 0
-    arenas:
-    - main
+  static: true
+
+# Base 20 team double elimination bracket
+# This support 19-20 teams without having any 2 robot matches.
+# 
+# Top 2 continue in the same bracket; bottom 2 go down a bracket.
+# If a team finishes in the bottom 2 in a match in the Lower bracket, they are out.
+# All teams start in the Upper bracket.
+
+static_knockout:
+  teams_per_arena: 4
+  
+  matches:
+    0:  # Upper Round 1
+      0:
+        arena: main
+        display_name: Upper Round 1 Match 1
+        start_time: 2024-04-13 12:44:00+01:00
+        teams: [S13, S17, S16, S20]
+      1:
+        arena: main
+        display_name: Upper Round 1 Match 2
+        start_time: 2024-04-13 12:49:00+01:00
+        teams: [S14, S18, S15, S19]
+    1:  # Upper Round 2
+      0:
+        arena: main
+        display_name: Upper Round 2 Match 1
+        start_time: 2024-04-13 13:09:00+01:00
+        teams: [S3, '011', S6, S11]
+      1:
+        arena: main
+        display_name: Upper Round 2 Match 2
+        start_time: 2024-04-13 13:14:00+01:00
+        teams: [S4, '001', S5, S12]
+      2:
+        arena: main
+        display_name: Upper Round 2 Match 3
+        start_time: 2024-04-13 13:19:00+01:00
+        teams: [S1, '010', S8, S9]
+      3:
+        arena: main
+        display_name: Upper Round 2 Match 4
+        start_time: 2024-04-13 13:24:00+01:00
+        teams: [S2, '000', S7, S10]
+    2:  # Lower Round 1
+      0:
+        arena: main
+        display_name: Lower Round 1 Match 1
+        start_time: 2024-04-13 13:34:00+01:00
+        teams: ['103', '002', '013', '112']
+      1:
+        arena: main
+        display_name: Lower Round 1 Match 2
+        start_time: 2024-04-13 13:39:00+01:00
+        teams: ['102', '003', '012', '113']
+    3:  # Upper Round 3
+      0:
+        arena: main
+        display_name: Upper Round 3 Match 1
+        start_time: 2024-04-13 13:49:00+01:00
+        teams: ['120', '131', '110', '101']
+      1:
+        arena: main
+        display_name: Upper Round 3 Match 2
+        start_time: 2024-04-13 13:54:00+01:00
+        teams: ['121', '130', '111', '100']
+    4:  # Lower Round 2
+      0:
+        arena: main
+        display_name: Lower Round 2 Match 1
+        start_time: 2024-04-13 14:04:00+01:00
+        teams: ['200', '102', '211', '133']
+      1:
+        arena: main
+        display_name: Lower Round 2 Match 2
+        start_time: 2024-04-13 14:09:00+01:00
+        teams: ['201', '103', '210', '132']
+    5:  # Lower Round 3
+      0:
+        arena: main
+        display_name: Lower Round 3 Match 1
+        start_time: 2024-04-13 14:34:00+01:00
+        teams: ['400', '303', '411', '312']
+      1:
+        arena: main
+        display_name: Lower Round 3 Match 2
+        start_time: 2024-04-13 14:39:00+01:00
+        teams: ['401', '302', '410', '313']
+    6:  # Upper Semi Final
+      0:
+        arena: main
+        display_name: Upper Semi Final
+        start_time: 2024-04-13 14:44:00+01:00
+        teams: ['300', '311', '310', '301']
+    7:  # Lower Round 4
+      0:
+        arena: main
+        display_name: Lower Round 4 Match 1
+        start_time: 2024-04-13 14:59:00+01:00
+        teams: ['500', '511', '510', '501']
+    8:  # Lower Semi Final
+      0:
+        arena: main
+        display_name: Lower Semi Final
+        start_time: 2024-04-13 15:19:00+01:00
+        teams: ['700', '603', '602', '701']
+    9:  # Grand Final
+      0:
+        arena: main
+        display_name: Grand Final
+        start_time: 2024-04-13 15:44:00+01:00
+        teams: ['600', '601', '800', '801']
