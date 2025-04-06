@@ -18,7 +18,7 @@ from sr.comp.types import ArenaName, MatchNumber
 ROOT = pathlib.Path(__file__).parent.parent
 sys.path.insert(0, str(ROOT))
 
-from ranker import Ranker  # type: ignore[import-not-found]  # noqa: E402
+from ranker import calc_ranked_points  # type: ignore[import-not-found]  # noqa: E402
 
 
 class RankerTests(unittest.TestCase):
@@ -30,8 +30,7 @@ class RankerTests(unittest.TestCase):
         disqualifications: Collection[TZone] = (),
         match_num: int,
     ) -> None:
-        ranker = Ranker()
-        actual_points = ranker.calc_ranked_points(
+        actual_points = calc_ranked_points(
             {RankedPosition(x): y for x, y in positions.items()},
             disqualifications=disqualifications,
             num_zones=len(expected_points),
