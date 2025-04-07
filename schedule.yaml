@@ -1,7 +1,7 @@
 # Primary description of the overall schedule of the competition.
 #
 # All durations are in seconds.
-# 
+#
 # Knockout schedule for 21-24 teams.
 
 #
@@ -91,14 +91,14 @@ knockout:
 
 # Base 24 team double elimination bracket
 # This support 21-24 teams without having any 2 robot matches.
-# 
+#
 # Top 2 continue in the same bracket; bottom 2 go down a bracket.
 # If a team finishes in the bottom 2 in a match in the Lower bracket, they are out.
 # All teams start in the Upper bracket.
 
 static_knockout:
   teams_per_arena: 4
-  
+
   matches:
     0:  # Upper Round 1
       0:
