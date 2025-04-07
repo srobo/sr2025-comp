@@ -12,7 +12,7 @@ teams:
         name: The College of Richard Collyer
         rookie: false
     HAB:
-        name: Haberdashers' Boys' School
+        name: Haberdashers’ Boys’ School
         rookie: false
     HAM:
         name: Hampton & Lady Eleanor Holles Schools
@@ -42,7 +42,7 @@ teams:
         name: Gymnasium Markt Indersdorf
         rookie: false
     MDN:
-        name: Jankler's stacking solutions
+        name: Jankler’s stacking solutions
         rookie: true
     NHH:
         name: Nower Hill School
@@ -51,7 +51,7 @@ teams:
         name: Peter Symonds College
         rookie: false
     QMC:
-        name: Queen Mary's College
+        name: Queen Mary’s College
         rookie: false
     RGS:
         name: Royal Grammar School Guildford
@@ -63,13 +63,13 @@ teams:
         name: School of St Helen and St Katharine
         rookie: true
     SOG:
-        name: St. Olave's Grammar School
+        name: St. Olave’s Grammar School
         rookie: false
     THS:
         name: The Highfield School
         rookie: true
     TLC:
-        name: The Ladies' College
+        name: The Ladies’ College
         rookie: false
     WGS:
         name: Wisbech Grammar School
