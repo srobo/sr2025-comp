@@ -115,7 +115,7 @@ static_knockout:
         arena: main
         display_name: Upper Round 1 Match 3
         start_time: 2025-04-13 12:54:00+01:00
-        teams: [S15, S23, S18, S26]
+        teams: [S15, S23, S18, null]
       3:
         arena: main
         display_name: Upper Round 1 Match 4
