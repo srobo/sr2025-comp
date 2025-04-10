@@ -1,4 +1,5 @@
 matches:
+  # Virtual League
   0:
     main:
     - PSC
@@ -137,3 +138,5 @@ matches:
     - HAB
     - HRO
     - SOG
+
+  # Physical League
