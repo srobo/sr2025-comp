@@ -31,7 +31,6 @@ teams:
     display_name: Shepherd Level 2
     teams:
       - WGS
-      - WMC
       - TLC
       - QMC
       - SOG
