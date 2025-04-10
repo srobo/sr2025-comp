@@ -140,3 +140,303 @@ matches:
     - SOG
 
   # Physical League
+  23:
+    main:
+    - KEV
+    - HRS
+    - BPV
+    - HAY
+  24:
+    main:
+    - BRK
+    - NHH
+    - RGS
+    - KEG
+  25:
+    main:
+    - ABS
+    - MDN
+    - HRO
+    - HWM
+  26:
+    main:
+    - PSC
+    - HAB
+    - CLY
+    - HAM
+  27:
+    main:
+    - THS
+    - MAI
+    - WGS
+    - TLC
+  28:
+    main:
+    - QMC
+    - SOG
+    - KEV
+    - RTS
+  29:
+    main:
+    - BPV
+    - HWM
+    - KEG
+    - SHK
+  30:
+    main:
+    - HRS
+    - PSC
+    - NHH
+    - HZW
+  31:
+    main:
+    - WGS
+    - HAB
+    - HAY
+    - ABS
+  32:
+    main:
+    - HRO
+    - RGS
+    - HAM
+    - THS
+  33:
+    main:
+    - TLC
+    - CLY
+    - SOG
+    - MDN
+  34:
+    main:
+    - HZW
+    - BRK
+    - HWM
+    - KEV
+  35:
+    main:
+    - RTS
+    - KEG
+    - PSC
+    - MAI
+  36:
+    main:
+    - SHK
+    - QMC
+    - ABS
+    - NHH
+  37:
+    main:
+    - HAB
+    - THS
+    - MDN
+    - HRS
+  38:
+    main:
+    - RGS
+    - TLC
+    - HZW
+    - BPV
+  39:
+    main:
+    - HAM
+    - MAI
+    - HAY
+    - SOG
+  40:
+    main:
+    - HWM
+    - WGS
+    - RTS
+    - CLY
+  41:
+    main:
+    - QMC
+    - HRO
+    - BRK
+    - PSC
+  42:
+    main:
+    - SHK
+    - KEV
+    - TLC
+    - HAB
+  43:
+    main:
+    - NHH
+    - BPV
+    - HAM
+    - MDN
+  44:
+    main:
+    - ABS
+    - RTS
+    - HRS
+    - RGS
+  45:
+    main:
+    - KEG
+    - HAY
+    - THS
+    - QMC
+  46:
+    main:
+    - SOG
+    - HZW
+    - HRO
+    - WGS
+  47:
+    main:
+    - CLY
+    - SHK
+    - MAI
+    - BRK
+  48:
+    main:
+    - BPV
+    - PSC
+    - KEV
+    - ABS
+  49:
+    main:
+    - HWM
+    - HAM
+    - HRS
+    - TLC
+  50:
+    main:
+    - HAY
+    - WGS
+    - KEG
+    - MDN
+  51:
+    main:
+    - RTS
+    - NHH
+    - SHK
+    - THS
+  52:
+    main:
+    - MAI
+    - RGS
+    - QMC
+    - HAB
+  53:
+    main:
+    - HRO
+    - SOG
+    - BRK
+    - BPV
+  54:
+    main:
+    - HAM
+    - ABS
+    - HZW
+    - CLY
+  55:
+    main:
+    - TLC
+    - NHH
+    - HWM
+    - HAY
+  56:
+    main:
+    - HRS
+    - SHK
+    - PSC
+    - WGS
+  57:
+    main:
+    - MDN
+    - THS
+    - MAI
+    - KEV
+  58:
+    main:
+    - RGS
+    - KEG
+    - HAB
+    - SOG
+  59:
+    main:
+    - BPV
+    - CLY
+    - QMC
+    - HZW
+  60:
+    main:
+    - HAY
+    - BRK
+    - RTS
+    - HAM
+  61:
+    main:
+    - MAI
+    - HRO
+    - SHK
+    - HRS
+  62:
+    main:
+    - THS
+    - HWM
+    - SOG
+    - PSC
+  63:
+    main:
+    - KEV
+    - RGS
+    - WGS
+    - NHH
+  64:
+    main:
+    - MDN
+    - ABS
+    - TLC
+    - BRK
+  65:
+    main:
+    - HAB
+    - RTS
+    - BPV
+    - HRO
+  66:
+    main:
+    - HZW
+    - HAM
+    - QMC
+    - KEG
+  67:
+    main:
+    - CLY
+    - KEV
+    - THS
+    - HRS
+  68:
+    main:
+    - PSC
+    - HAY
+    - RGS
+    - SHK
+  69:
+    main:
+    - SOG
+    - ABS
+    - NHH
+    - MAI
+  70:
+    main:
+    - BRK
+    - QMC
+    - WGS
+    - HWM
+  71:
+    main:
+    - HAB
+    - HZW
+    - MDN
+    - RTS
+  72:
+    main:
+    - KEG
+    - TLC
+    - CLY
+    - HRO
