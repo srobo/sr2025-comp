@@ -1,4 +1,5 @@
 matches:
+  # Virtual League
   0:
     main:
     - PSC
@@ -137,297 +138,305 @@ matches:
     - HAB
     - HRO
     - SOG
+
+  # Physical League
   23:
     main:
-    - HRO
-    - BPV
-    - HAM
     - KEV
+    - HRS
+    - BPV
+    - HAY
   24:
     main:
-    - CLY
-    - null
-    - TLC
-    - HRS
+    - BRK
+    - NHH
+    - RGS
+    - KEG
   25:
     main:
-    - MAI
     - ABS
-    - KEG
-    - HAY
+    - MDN
+    - HRO
+    - HWM
   26:
     main:
-    - THS
-    - NHH
-    - MDN
-    - RTS
+    - PSC
+    - HAB
+    - CLY
+    - HAM
   27:
     main:
-    - HWM
-    - HAB
-    - HZW
-    - null
+    - THS
+    - MAI
+    - WGS
+    - TLC
   28:
     main:
-    - PSC
     - QMC
-    - null
-    - BRK
+    - SOG
+    - KEV
+    - RTS
   29:
     main:
-    - RGS
-    - WGS
-    - SHK
-    - SOG
-  30:
-    main:
-    - HAM
-    - CLY
-    - MAI
-    - THS
-  31:
-    main:
-    - ABS
-    - KEV
-    - NHH
-    - null
-  32:
-    main:
-    - HRS
-    - HRO
-    - HAY
-    - MDN
-  33:
-    main:
-    - WGS
     - BPV
     - HWM
-    - null
+    - KEG
+    - SHK
+  30:
+    main:
+    - HRS
+    - PSC
+    - NHH
+    - HZW
+  31:
+    main:
+    - WGS
+    - HAB
+    - HAY
+    - ABS
+  32:
+    main:
+    - HRO
+    - RGS
+    - HAM
+    - THS
+  33:
+    main:
+    - TLC
+    - CLY
+    - SOG
+    - MDN
   34:
     main:
     - HZW
-    - PSC
-    - RGS
-    - TLC
+    - BRK
+    - HWM
+    - KEV
   35:
     main:
-    - SHK
+    - RTS
     - KEG
-    - HAB
-    - QMC
+    - PSC
+    - MAI
   36:
     main:
-    - RTS
-    - null
-    - BRK
-    - SOG
+    - SHK
+    - QMC
+    - ABS
+    - NHH
   37:
     main:
-    - NHH
+    - HAB
+    - THS
+    - MDN
     - HRS
-    - HWM
-    - MAI
   38:
     main:
-    - KEV
-    - HAY
-    - THS
-    - WGS
+    - RGS
+    - TLC
+    - HZW
+    - BPV
   39:
     main:
-    - MDN
-    - HZW
-    - ABS
     - HAM
+    - MAI
+    - HAY
+    - SOG
   40:
     main:
-    - HAB
-    - null
+    - HWM
+    - WGS
     - RTS
     - CLY
   41:
     main:
-    - TLC
-    - SOG
     - QMC
     - HRO
+    - BRK
+    - PSC
   42:
     main:
-    - KEG
-    - BRK
-    - null
-    - RGS
+    - SHK
+    - KEV
+    - TLC
+    - HAB
   43:
     main:
+    - NHH
     - BPV
-    - SHK
-    - null
-    - PSC
+    - HAM
+    - MDN
   44:
     main:
-    - HAY
+    - ABS
     - RTS
-    - HAM
-    - HWM
+    - HRS
+    - RGS
   45:
     main:
-    - NHH
-    - TLC
-    - WGS
-    - HAB
+    - KEG
+    - HAY
+    - THS
+    - QMC
   46:
     main:
-    - null
-    - RGS
-    - HRS
-    - KEV
+    - SOG
+    - HZW
+    - HRO
+    - WGS
   47:
     main:
-    - BRK
-    - MAI
-    - HZW
+    - CLY
     - SHK
+    - MAI
+    - BRK
   48:
     main:
-    - QMC
-    - null
-    - CLY
+    - BPV
+    - PSC
+    - KEV
     - ABS
   49:
     main:
-    - null
-    - THS
-    - PSC
-    - HRO
+    - HWM
+    - HAM
+    - HRS
+    - TLC
   50:
     main:
+    - HAY
+    - WGS
     - KEG
     - MDN
-    - SOG
-    - BPV
   51:
     main:
-    - HWM
-    - BRK
-    - KEV
-    - TLC
+    - RTS
+    - NHH
+    - SHK
+    - THS
   52:
     main:
-    - WGS
-    - RTS
-    - QMC
     - MAI
+    - RGS
+    - QMC
+    - HAB
   53:
     main:
-    - CLY
-    - SHK
-    - HAY
-    - NHH
+    - HRO
+    - SOG
+    - BRK
+    - BPV
   54:
     main:
-    - RGS
-    - HAB
-    - HRO
+    - HAM
     - ABS
+    - HZW
+    - CLY
   55:
     main:
-    - null
-    - null
-    - null
-    - MDN
+    - TLC
+    - NHH
+    - HWM
+    - HAY
   56:
     main:
-    - THS
     - HRS
-    - BPV
-    - HZW
+    - SHK
+    - PSC
+    - WGS
   57:
     main:
-    - SOG
-    - HAM
-    - PSC
-    - KEG
+    - MDN
+    - THS
+    - MAI
+    - KEV
   58:
     main:
-    - RTS
-    - TLC
-    - ABS
-    - SHK
+    - RGS
+    - KEG
+    - HAB
+    - SOG
   59:
     main:
-    - null
-    - NHH
-    - HRO
-    - BRK
+    - BPV
+    - CLY
+    - QMC
+    - HZW
   60:
     main:
-    - QMC
-    - HWM
-    - THS
-    - RGS
+    - HAY
+    - BRK
+    - RTS
+    - HAM
   61:
     main:
-    - HZW
-    - KEG
-    - KEV
-    - CLY
-  62:
-    main:
-    - HAM
-    - WGS
-    - HRS
-    - null
-  63:
-    main:
-    - MDN
-    - PSC
     - MAI
-    - HAB
-  64:
-    main:
-    - HAY
-    - null
-    - SOG
-    - BPV
-  65:
-    main:
-    - ABS
     - HRO
     - SHK
+    - HRS
+  62:
+    main:
+    - THS
     - HWM
+    - SOG
+    - PSC
+  63:
+    main:
+    - KEV
+    - RGS
+    - WGS
+    - NHH
+  64:
+    main:
+    - MDN
+    - ABS
+    - TLC
+    - BRK
+  65:
+    main:
+    - HAB
+    - RTS
+    - BPV
+    - HRO
   66:
     main:
-    - TLC
-    - THS
-    - null
+    - HZW
+    - HAM
+    - QMC
     - KEG
   67:
     main:
-    - null
-    - RGS
-    - NHH
-    - HAM
+    - CLY
+    - KEV
+    - THS
+    - HRS
   68:
     main:
-    - BRK
-    - CLY
-    - MDN
-    - WGS
+    - PSC
+    - HAY
+    - RGS
+    - SHK
   69:
     main:
-    - PSC
-    - HZW
-    - RTS
-    - HAY
+    - SOG
+    - ABS
+    - NHH
+    - MAI
   70:
     main:
-    - MAI
+    - BRK
     - QMC
-    - BPV
-    - null
+    - WGS
+    - HWM
   71:
     main:
-    - KEV
-    - SOG
     - HAB
-    - HRS
+    - HZW
+    - MDN
+    - RTS
+  72:
+    main:
+    - KEG
+    - TLC
+    - CLY
+    - HRO
