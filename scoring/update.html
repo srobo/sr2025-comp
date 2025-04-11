@@ -1,5 +1,15 @@
 {% extends "_update.html" %}
 
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .score-sheet svg input[data-pallets] {
+            letter-spacing: 0;
+            padding: 0.2em 0.1em;
+        }
+    </style>>
+{% endblock %}
+
 {% macro input_highest(x, y, name) %}
     <foreignObject x="{{ x + 5 }}" y="{{ y }}" width="95" height="30">
         <input
@@ -26,6 +36,7 @@
     </foreignObject>
     <foreignObject x="{{ x + 20 }}" y="{{ y }}" width="30" height="30">
         <input
+            data-pallets
             class="pallets tokens"
             type="text"
             id="district_{{ name }}_pallets_{{ colour_symbol }}"
