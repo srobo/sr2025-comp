@@ -50,10 +50,10 @@ match_periods:
     description: Virtual league
 
 #
-  - start_time: 2025-04-12 11:24:00+01:00   # 11:24 comes from 11:20 in the day schedule plus 5 minute buffer, minus the 60 second pre-match slot length
-    end_time: 2025-04-12 12:34:00+01:00
-    max_end_time: 2025-04-12 12:36:00+01:00
-    description: Saturday league, morning
+  - start_time: 2025-04-11 13:59:00+01:00
+    end_time: 2025-04-11 17:34:00+01:00
+    max_end_time: 2025-04-11 17:36:00+01:00
+    description: Testing
 
 #
   - start_time: 2025-04-12 13:24:00+01:00
