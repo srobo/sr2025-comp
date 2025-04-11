@@ -2,3 +2,4 @@
 # support triggered updates.
 deployments:
   - srcomp.studentrobotics.org
+  - compbox.srobo
