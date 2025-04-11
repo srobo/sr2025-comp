@@ -310,9 +310,17 @@ class ScorerTests(unittest.TestCase):
             code='impossible_highest_pallet',
         )
 
-    def test_highest_when_team_not_present(self) -> None:
+    def test_highest_when_no_pallets_that_zone(self) -> None:
         self.districts['outer_sw']['highest'] = 'Y'
         self.districts['outer_sw']['pallets'] = {'O': 1, 'P': 1}
+        self.assertInvalidScoresheet(
+            self.districts,
+            code='impossible_highest_pallet',
+        )
+
+    def test_highest_when_zero_pallets_that_zone(self) -> None:
+        self.districts['outer_sw']['highest'] = 'Y'
+        self.districts['outer_sw']['pallets'] = {'O': 1, 'P': 1, 'G': 0, 'Y': 0}
         self.assertInvalidScoresheet(
             self.districts,
             code='impossible_highest_pallet',

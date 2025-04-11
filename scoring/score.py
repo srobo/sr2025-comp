@@ -145,7 +145,7 @@ class Scorer:
         bad_highest2 = {}
         for name, district in self._districts.items():
             highest = district['highest']
-            if highest and highest not in district['pallets']:
+            if highest and not district['pallets'][highest]:
                 bad_highest2[name] = (highest, district['pallets'].keys())
         if bad_highest2:
             detail = "\n".join(
