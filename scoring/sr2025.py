@@ -22,16 +22,7 @@ DISTRICT_SCORE_MAP = {
     'central': 3,
 }
 
-DISTRICTS_NO_HIGH_RISE = frozenset([
-    'outer_nw',
-    'outer_ne',
-    'outer_se',
-    'outer_sw',
-])
-
 DISTRICTS = DISTRICT_SCORE_MAP.keys()
-
-assert DISTRICTS_NO_HIGH_RISE < DISTRICTS
 
 ZONE_COLOURS = (
     'G',    # zone 0 = green
