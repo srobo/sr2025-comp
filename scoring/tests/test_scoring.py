@@ -250,6 +250,19 @@ class ScorerTests(unittest.TestCase):
             self.districts,
         )
 
+    def test_outer_single_token_highest(self) -> None:
+        # Tokens *can* be placed on top of other tokens which themselves aren't
+        # counted as in the zone.
+        self.districts['outer_nw']['highest'] = 'G'
+        self.districts['outer_nw']['pallets'] = {'G': 1}
+        self.assertScores(
+            {
+                'GGG': 2,
+                'OOO': 0,
+            },
+            self.districts,
+        )
+
     # Invalid input
 
     def test_bad_highest_pallet_letter(self) -> None:
@@ -264,14 +277,6 @@ class ScorerTests(unittest.TestCase):
         self.assertInvalidScoresheet(
             self.districts,
             code='invalid_pallets',
-        )
-
-    def test_outer_highest_requires_multiple_tokens_self(self) -> None:
-        self.districts['outer_sw']['highest'] = 'O'
-        self.districts['outer_sw']['pallets'] = {'O': 1}
-        self.assertInvalidScoresheet(
-            self.districts,
-            code='impossible_highest_single_pallet',
         )
 
     def test_missing_district(self) -> None:
