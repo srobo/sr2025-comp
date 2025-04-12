@@ -44,6 +44,8 @@ delays:
 # Times here relate to the *start* of a match slot, so allow enough time for a
 # match to complete if there is something else important happening immediately
 # after a period ends.
+- delay: 120
+  time: 2025-04-12 14:09:07+01:00
 match_periods:
   league:
   - start_time: 2025-02-08 13:10:00+00:00
