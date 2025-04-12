@@ -1,0 +1,5 @@
+#!/bin/bash -e
+git pull srobo-score-entry main
+git push
+srcomp deploy .
+ssh srobo-score-entry 'cd compstate && git pull --ff-only'
