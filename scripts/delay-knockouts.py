@@ -115,7 +115,7 @@ def parse_args():
         "--round-spacing",
         type=int,
         default=5*60,
-        help="Set the minimum time that will be maintained between matches.",
+        help="Set the minimum time that will be maintained between matches, in seconds (default: %(default)s).",
     )
 
     return parser.parse_args()
