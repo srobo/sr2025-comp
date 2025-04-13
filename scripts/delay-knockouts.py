@@ -4,10 +4,11 @@ Shift a static knockout schedule by a given timedelta.
 
 Requires sr.comp.cli
 """
+
 import argparse
 from datetime import datetime, timedelta
-from pathlib import Path
 from itertools import islice
+from pathlib import Path
 
 from sr.comp.cli import yaml_round_trip as yaml
 from sr.comp.cli.add_delay import parse_duration, parse_time
