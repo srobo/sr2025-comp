@@ -19,20 +19,19 @@ def shift_schedule(
     shift: timedelta,
     starting_round: int,
     starting_match: int,
-    slot_duration: int = 0,
+    slot_duration: timedelta,
     squash_slack: bool = False,
     round_spacing: int = 5 * 60,
 ):
     """Shift the schedule by a given timedelta."""
 
     round_gap = timedelta(seconds=round_spacing)
-    slot_period = timedelta(seconds=slot_duration)
     last_start_time = knockouts[starting_round][starting_match]['start_time']
 
     # Shift the start time of the matches after the starting match in the starting round
     knockout = knockouts.get(starting_round, {})
     for idx, match in islice(knockout.items(), starting_match, None):
-            spacing = match['start_time'] - last_start_time - slot_period
+            spacing = match['start_time'] - last_start_time - slot_duration
             last_start_time = match['start_time']
             print(f"Match {idx} spacing: {spacing}")
             if squash_slack:
@@ -51,7 +50,7 @@ def shift_schedule(
     # Shift the start time of all matches in the rounds after the starting round
     for knockout in islice(knockouts.values(), starting_round + 1, None):
         for idx, match in knockout.items():
-            spacing = match['start_time'] - last_start_time - slot_period
+            spacing = match['start_time'] - last_start_time - slot_duration
             last_start_time = match['start_time']
             print(f"Match {idx} spacing: {spacing}")
             if squash_slack:
@@ -147,7 +146,7 @@ def main():
     else:
         how_long = parse_duration(args.how_long)
 
-    slot_duration = schedule['match_slot_lengths']['total']
+    slot_duration = timedelta(seconds=schedule['match_slot_lengths']['total'])
 
     shift_schedule(knockout, how_long, round_num, match_num, slot_duration, args.squash_slack, args.round_spacing)
 
