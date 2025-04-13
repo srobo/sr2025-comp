@@ -129,87 +129,87 @@ static_knockout:
       0:
         arena: main
         display_name: Upper Round 2 Match 1
-        start_time: 2025-04-13 13:14:00+01:00
+        start_time: 2025-04-13 13:17:00+01:00
         teams: ['030', '000', '021', '011']
       1:
         arena: main
         display_name: Upper Round 2 Match 2
-        start_time: 2025-04-13 13:19:00+01:00
+        start_time: 2025-04-13 13:22:00+01:00
         teams: ['020', '031', '010', '001']
     2:  # Lower Round 1
       0:
         arena: main
         display_name: Lower Round 1 Match 1
-        start_time: 2025-04-13 13:24:00+01:00
+        start_time: 2025-04-13 13:27:00+01:00
         teams: ['032', '022', null, null]
       1:
         arena: main
         display_name: Lower Round 1 Match 2
-        start_time: 2025-04-13 13:29:00+01:00
+        start_time: 2025-04-13 13:32:00+01:00
         teams: ['033', '002', '012', null]
     3:  # Upper Round 3
       0:
         arena: main
         display_name: Upper Round 3 Match 1
-        start_time: 2025-04-13 13:34:00+01:00
+        start_time: 2025-04-13 13:37:00+01:00
         teams: ['111', S8, S1, S9]
       1:
         arena: main
         display_name: Upper Round 3 Match 2
-        start_time: 2025-04-13 13:39:00+01:00
+        start_time: 2025-04-13 13:42:00+01:00
         teams: [S7, '101', S10, S2]
       2:
         arena: main
         display_name: Upper Round 3 Match 3
-        start_time: 2025-04-13 13:44:00+01:00
+        start_time: 2025-04-13 13:47:00+01:00
         teams: [S3, S6, '110', S11]
       3:
         arena: main
         display_name: Upper Round 3 Match 4
-        start_time: 2025-04-13 13:49:00+01:00
+        start_time: 2025-04-13 13:52:00+01:00
         teams: [S4, S12, S5, '100']
     4:  # Lower Round 2
       0:
         arena: main
         display_name: Lower Round 2 Match 1
-        start_time: 2025-04-13 13:54:00+01:00
+        start_time: 2025-04-13 13:57:00+01:00
         teams: ['103', '302', '200', '313']
       1:
         arena: main
         display_name: Lower Round 2 Match 2
-        start_time: 2025-04-13 13:59:00+01:00
+        start_time: 2025-04-13 14:02:00+01:00
         teams: ['312', '303', '201', '102']
       2:
         arena: main
         display_name: Lower Round 2 Match 3
-        start_time: 2025-04-13 14:04:00+01:00
+        start_time: 2025-04-13 14:07:00+01:00
         teams: ['210', '333', '322', '113']
       3:
         arena: main
         display_name: Lower Round 2 Match 4
-        start_time: 2025-04-13 14:09:00+01:00
+        start_time: 2025-04-13 14:12:00+01:00
         teams: ['323', '211', '112', '332']
     5:  # Upper Round 4
       0:
         arena: main
         display_name: Upper Round 4 Match 1
-        start_time: 2025-04-13 14:14:00+01:00
+        start_time: 2025-04-13 14:17:00+01:00
         teams: ['321', '330', '311', '300']
       1:
         arena: main
         display_name: Upper Round 4 Match 2
-        start_time: 2025-04-13 14:19:00+01:00
+        start_time: 2025-04-13 14:22:00+01:00
         teams: ['331', '301', '310', '320']
     6:  # Lower Round 3
       0:
         arena: main
         display_name: Lower Round 3 Match 1
-        start_time: 2025-04-13 14:24:00+01:00
+        start_time: 2025-04-13 14:27:00+01:00
         teams: ['410', '421', '400', '431']
       1:
         arena: main
         display_name: Lower Round 3 Match 2
-        start_time: 2025-04-13 14:29:00+01:00
+        start_time: 2025-04-13 14:32:00+01:00
         teams: ['420', '401', '430', '411']
     7:  # Lower Round 4
       0:
