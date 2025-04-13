@@ -12,22 +12,6 @@ from itertools import islice
 from sr.comp.cli import yaml_round_trip as yaml
 from sr.comp.cli.add_delay import parse_duration, parse_time
 
-# import ruamel.yaml
-
-# yaml = ruamel.yaml.YAML()  # defaults to round-trip if no parameters given
-# yaml.Constructor.add_constructor(
-#     'tag:yaml.org,2002:timestamp',
-#     lambda _, node: datetime.fromisoformat(node.value),
-# )
-
-# def load_schedule(filename: Path):
-#     """Load a schedule from a file."""
-#     return yaml.load(filename.read_text())
-
-# def save_schedule(filename: Path, schedule):
-#     """Save a schedule to a file."""
-#     yaml.dump(schedule, filename)
-
 
 def shift_schedule(
     knockouts,
