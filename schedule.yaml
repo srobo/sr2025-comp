@@ -141,12 +141,12 @@ static_knockout:
         arena: main
         display_name: Lower Round 1 Match 1
         start_time: 2025-04-13 13:24:00+01:00
-        teams: ['032', '022', '003', '013']
+        teams: ['032', '022', null, null]
       1:
         arena: main
         display_name: Lower Round 1 Match 2
         start_time: 2025-04-13 13:29:00+01:00
-        teams: ['033', '002', '012', '023']
+        teams: ['033', '002', '012', null]
     3:  # Upper Round 3
       0:
         arena: main
