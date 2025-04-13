@@ -20,8 +20,8 @@ def shift_schedule(
     starting_round: int,
     starting_match: int,
     slot_duration: timedelta,
-    squash_slack: bool = False,
-    round_spacing: int = 5 * 60,
+    squash_slack: bool,
+    round_spacing: int,
 ):
     """Shift the schedule by a given timedelta."""
 
