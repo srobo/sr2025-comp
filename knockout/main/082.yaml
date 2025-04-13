@@ -1,0 +1,89 @@
+arena_id: main
+arena_zones:
+  other:
+    districts:
+      central:
+        highest: ''
+        pallets:
+          G: 0
+          O: 0
+          P: 0
+          Y: 0
+      inner_ne:
+        highest: P
+        pallets:
+          G: 0
+          O: 0
+          P: 1
+          Y: 0
+      inner_nw:
+        highest: ''
+        pallets:
+          G: 0
+          O: 0
+          P: 0
+          Y: 0
+      inner_se:
+        highest: Y
+        pallets:
+          G: 0
+          O: 0
+          P: 0
+          Y: 2
+      inner_sw:
+        highest: G
+        pallets:
+          G: 2
+          O: 0
+          P: 0
+          Y: 0
+      outer_ne:
+        highest: ''
+        pallets:
+          G: 0
+          O: 0
+          P: 0
+          Y: 0
+      outer_nw:
+        highest: ''
+        pallets:
+          G: 0
+          O: 0
+          P: 0
+          Y: 0
+      outer_se:
+        highest: ''
+        pallets:
+          G: 0
+          O: 0
+          P: 0
+          Y: 0
+      outer_sw:
+        highest: ''
+        pallets:
+          G: 0
+          O: 0
+          P: 0
+          Y: 0
+match_number: 82
+teams:
+  CLY:
+    disqualified: false
+    left_starting_zone: true
+    present: true
+    zone: 2
+  PSC:
+    disqualified: false
+    left_starting_zone: true
+    present: true
+    zone: 1
+  QMC:
+    disqualified: false
+    left_starting_zone: true
+    present: true
+    zone: 0
+  SHK:
+    disqualified: false
+    left_starting_zone: true
+    present: true
+    zone: 3
