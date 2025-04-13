@@ -109,140 +109,140 @@ static_knockout:
         arena: main
         display_name: Upper Round 1 Match 1
         start_time: 2025-04-13 12:44:00+01:00
-        teams: [S13, S21, S20, null]
+        teams: [S13, null, S20, S21]
       1:
         arena: main
         display_name: Upper Round 1 Match 2
         start_time: 2025-04-13 12:49:00+01:00
-        teams: [S14, S22, S19, null]
+        teams: [S19, S14, null, S22]
       2:
         arena: main
         display_name: Upper Round 1 Match 3
         start_time: 2025-04-13 12:54:00+01:00
-        teams: [S15, S23, S18, null]
+        teams: [S23, null, S15, S18]
       3:
         arena: main
         display_name: Upper Round 1 Match 4
         start_time: 2025-04-13 12:59:00+01:00
-        teams: [S16, S24, S17, S25]
+        teams: [S25, S24, S17, S16]
     1:  # Upper Round 2
       0:
         arena: main
         display_name: Upper Round 2 Match 1
         start_time: 2025-04-13 13:14:00+01:00
-        teams: ['000', '011', '030', '021']
+        teams: ['030', '000', '021', '011']
       1:
         arena: main
         display_name: Upper Round 2 Match 2
         start_time: 2025-04-13 13:19:00+01:00
-        teams: ['001', '010', '031', '020']
+        teams: ['020', '031', '010', '001']
     2:  # Lower Round 1
       0:
         arena: main
         display_name: Lower Round 1 Match 1
         start_time: 2025-04-13 13:24:00+01:00
-        teams: ['003', '032', '013', '022']
+        teams: ['032', '022', '003', '013']
       1:
         arena: main
         display_name: Lower Round 1 Match 2
         start_time: 2025-04-13 13:29:00+01:00
-        teams: ['002', '033', '012', '023']
+        teams: ['033', '002', '012', '023']
     3:  # Upper Round 3
       0:
         arena: main
         display_name: Upper Round 3 Match 1
         start_time: 2025-04-13 13:34:00+01:00
-        teams: [S1, '111', S8, S9]
+        teams: ['111', S8, S1, S9]
       1:
         arena: main
         display_name: Upper Round 3 Match 2
         start_time: 2025-04-13 13:39:00+01:00
-        teams: [S2, '101', S7, S10]
+        teams: [S7, '101', S10, S2]
       2:
         arena: main
         display_name: Upper Round 3 Match 3
         start_time: 2025-04-13 13:44:00+01:00
-        teams: [S3, '110', S6, S11]
+        teams: [S3, S6, '110', S11]
       3:
         arena: main
         display_name: Upper Round 3 Match 4
         start_time: 2025-04-13 13:49:00+01:00
-        teams: [S4, '100', S5, S12]
+        teams: [S4, S12, S5, '100']
     4:  # Lower Round 2
       0:
         arena: main
         display_name: Lower Round 2 Match 1
         start_time: 2025-04-13 13:54:00+01:00
-        teams: ['200', '313', '103', '302']
+        teams: ['103', '302', '200', '313']
       1:
         arena: main
         display_name: Lower Round 2 Match 2
         start_time: 2025-04-13 13:59:00+01:00
-        teams: ['201', '312', '102', '303']
+        teams: ['312', '303', '201', '102']
       2:
         arena: main
         display_name: Lower Round 2 Match 3
         start_time: 2025-04-13 14:04:00+01:00
-        teams: ['210', '333', '113', '322']
+        teams: ['210', '333', '322', '113']
       3:
         arena: main
         display_name: Lower Round 2 Match 4
         start_time: 2025-04-13 14:09:00+01:00
-        teams: ['211', '332', '112', '323']
+        teams: ['323', '211', '112', '332']
     5:  # Upper Round 4
       0:
         arena: main
         display_name: Upper Round 4 Match 1
         start_time: 2025-04-13 14:14:00+01:00
-        teams: ['300', '311', '330', '321']
+        teams: ['321', '330', '311', '300']
       1:
         arena: main
         display_name: Upper Round 4 Match 2
         start_time: 2025-04-13 14:19:00+01:00
-        teams: ['301', '310', '331', '320']
+        teams: ['331', '301', '310', '320']
     6:  # Lower Round 3
       0:
         arena: main
         display_name: Lower Round 3 Match 1
         start_time: 2025-04-13 14:24:00+01:00
-        teams: ['400', '421', '410', '431']
+        teams: ['410', '421', '400', '431']
       1:
         arena: main
         display_name: Lower Round 3 Match 2
         start_time: 2025-04-13 14:29:00+01:00
-        teams: ['401', '420', '411', '430']
+        teams: ['420', '401', '430', '411']
     7:  # Lower Round 4
       0:
         arena: main
         display_name: Lower Round 4 Match 1
         start_time: 2025-04-13 14:44:00+01:00
-        teams: ['600', '502', '611', '513']
+        teams: ['600', '513', '611', '502']
       1:
         arena: main
         display_name: Lower Round 4 Match 2
         start_time: 2025-04-13 14:49:00+01:00
-        teams: ['601', '503', '610', '512']
+        teams: ['601', '610', '512', '503']
     8:  # Upper Semi Final
       0:
         arena: main
         display_name: Upper Semi Final
         start_time: 2025-04-13 14:54:00+01:00
-        teams: ['500', '511', '510', '501']
+        teams: ['510', '511', '500', '501']
     9:  # Lower Round 5
       0:
         arena: main
         display_name: Lower Round 5 Match 1
         start_time: 2025-04-13 15:04:00+01:00
-        teams: ['700', '711', '710', '701']
+        teams: ['700', '710', '701', '711']
     10:  # Lower Semi Final
       0:
         arena: main
         display_name: Lower Semi Final
         start_time: 2025-04-13 15:24:00+01:00
-        teams: ['900', '803', '802', '901']
+        teams: ['900', '803', '901', '802']
     11:  # Grand Final
       0:
         arena: main
         display_name: Grand Final
         start_time: 2025-04-13 15:44:00+01:00
-        teams: ['800', '801', R10M0P0, R10M0P1]
+        teams: ['800', R10M0P0, '801', R10M0P1]
