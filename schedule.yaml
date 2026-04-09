@@ -107,9 +107,12 @@ knockout:
         minimum: 600    # 10 minutes
         nominal: 600    # 10 minutes
       7:
-        delay_flex: 0
-        minimum: 420    # 7 minutes
-        nominal: 420    # 7 minutes
+        # Note: this appears to be the only place where delays were absorbed,
+        # since flexible gaps are new after SR2025 we don't actually know where
+        # else they would have been allowed to be absorbed.
+        delay_flex: 300 # 5 minutes
+        minimum: 300    # 5 minutes
+        nominal: 600    # 10 minutes
       9:
         delay_flex: 0
         minimum: 300    # 5 minutes
