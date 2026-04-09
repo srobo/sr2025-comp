@@ -1,0 +1,241 @@
+# Base 28 team double elimination bracket
+# This support 25-28 teams without having any 2 robot matches.
+#
+# Top 2 continue in the same bracket; bottom 2 go down a bracket.
+# If a team finishes in the bottom 2 in a match in the Lower bracket, they are out.
+# All teams start in the Upper bracket.
+
+structured_knockout:
+  rounds:
+    0:
+      match_slots: # Upper Round 1
+        0:
+          main:
+            display_name: Upper Round 1 Match 1
+            teams:
+              - seed: 13
+              - null
+              - seed: 20
+              - seed: 21
+        1:
+          main:
+            display_name: Upper Round 1 Match 2
+            teams:
+              - seed: 19
+              - seed: 14
+              - null
+              - seed: 22
+        2:
+          main:
+            display_name: Upper Round 1 Match 3
+            teams:
+              - seed: 23
+              - null
+              - seed: 15
+              - seed: 18
+        3:
+          main:
+            display_name: Upper Round 1 Match 4
+            teams:
+              - seed: 25
+              - seed: 24
+              - seed: 17
+              - seed: 16
+    1:
+      match_slots: # Upper Round 2
+        0:
+          main:
+            display_name: Upper Round 2 Match 1
+            teams:
+              - {round: 0, slot: 3, arena: main, position: 0}
+              - {round: 0, slot: 0, arena: main, position: 0}
+              - {round: 0, slot: 2, arena: main, position: 1}
+              - {round: 0, slot: 1, arena: main, position: 1}
+        1:
+          main:
+            display_name: Upper Round 2 Match 2
+            teams:
+              - {round: 0, slot: 2, arena: main, position: 0}
+              - {round: 0, slot: 3, arena: main, position: 1}
+              - {round: 0, slot: 1, arena: main, position: 0}
+              - {round: 0, slot: 0, arena: main, position: 1}
+    2:
+      match_slots: # Lower Round 1
+        0:
+          main:
+            display_name: Lower Round 1 Match 1
+            teams:
+              - {round: 0, slot: 3, arena: main, position: 2}
+              - {round: 0, slot: 2, arena: main, position: 2}
+              - null
+              - null
+        1:
+          main:
+            display_name: Lower Round 1 Match 2
+            teams:
+              - {round: 0, slot: 3, arena: main, position: 3}
+              - {round: 0, slot: 0, arena: main, position: 2}
+              - {round: 0, slot: 1, arena: main, position: 2}
+              - null
+    3:
+      match_slots: # Upper Round 3
+        0:
+          main:
+            display_name: Upper Round 3 Match 1
+            teams:
+              - {round: 1, slot: 1, arena: main, position: 1}
+              - seed: 8
+              - seed: 1
+              - seed: 9
+        1:
+          main:
+            display_name: Upper Round 3 Match 2
+            teams:
+              - seed: 7
+              - {round: 1, slot: 0, arena: main, position: 1}
+              - seed: 10
+              - seed: 2
+        2:
+          main:
+            display_name: Upper Round 3 Match 3
+            teams:
+              - seed: 3
+              - seed: 6
+              - {round: 1, slot: 1, arena: main, position: 0}
+              - seed: 11
+        3:
+          main:
+            display_name: Upper Round 3 Match 4
+            teams:
+              - seed: 4
+              - seed: 12
+              - seed: 5
+              - {round: 1, slot: 0, arena: main, position: 0}
+    4:
+      match_slots: # Lower Round 2
+        0:
+          main:
+            display_name: Lower Round 2 Match 1
+            teams:
+              - {round: 1, slot: 0, arena: main, position: 3}
+              - {round: 3, slot: 0, arena: main, position: 2}
+              - {round: 2, slot: 0, arena: main, position: 0}
+              - {round: 3, slot: 1, arena: main, position: 3}
+        1:
+          main:
+            display_name: Lower Round 2 Match 2
+            teams:
+              - {round: 3, slot: 1, arena: main, position: 2}
+              - {round: 3, slot: 0, arena: main, position: 3}
+              - {round: 2, slot: 0, arena: main, position: 1}
+              - {round: 1, slot: 0, arena: main, position: 2}
+        2:
+          main:
+            display_name: Lower Round 2 Match 3
+            teams:
+              - {round: 2, slot: 1, arena: main, position: 0}
+              - {round: 3, slot: 3, arena: main, position: 3}
+              - {round: 3, slot: 2, arena: main, position: 2}
+              - {round: 1, slot: 1, arena: main, position: 3}
+        3:
+          main:
+            display_name: Lower Round 2 Match 4
+            teams:
+              - {round: 3, slot: 2, arena: main, position: 3}
+              - {round: 2, slot: 1, arena: main, position: 1}
+              - {round: 1, slot: 1, arena: main, position: 2}
+              - {round: 3, slot: 3, arena: main, position: 2}
+    5:
+      match_slots: # Upper Round 4
+        0:
+          main:
+            display_name: Upper Round 4 Match 1
+            teams:
+              - {round: 3, slot: 2, arena: main, position: 1}
+              - {round: 3, slot: 3, arena: main, position: 0}
+              - {round: 3, slot: 1, arena: main, position: 1}
+              - {round: 3, slot: 0, arena: main, position: 0}
+        1:
+          main:
+            display_name: Upper Round 4 Match 2
+            teams:
+              - {round: 3, slot: 3, arena: main, position: 1}
+              - {round: 3, slot: 0, arena: main, position: 1}
+              - {round: 3, slot: 1, arena: main, position: 0}
+              - {round: 3, slot: 2, arena: main, position: 0}
+    6:
+      match_slots: # Lower Round 3
+        0:
+          main:
+            display_name: Lower Round 3 Match 1
+            teams:
+              - {round: 4, slot: 1, arena: main, position: 0}
+              - {round: 4, slot: 2, arena: main, position: 1}
+              - {round: 4, slot: 0, arena: main, position: 0}
+              - {round: 4, slot: 3, arena: main, position: 1}
+        1:
+          main:
+            display_name: Lower Round 3 Match 2
+            teams:
+              - {round: 4, slot: 2, arena: main, position: 0}
+              - {round: 4, slot: 0, arena: main, position: 1}
+              - {round: 4, slot: 3, arena: main, position: 0}
+              - {round: 4, slot: 1, arena: main, position: 1}
+    7:
+      match_slots: # Lower Round 4
+        0:
+          main:
+            display_name: Lower Round 4 Match 1
+            teams:
+              - {round: 6, slot: 0, arena: main, position: 0}
+              - {round: 5, slot: 1, arena: main, position: 3}
+              - {round: 6, slot: 1, arena: main, position: 1}
+              - {round: 5, slot: 0, arena: main, position: 2}
+        1:
+          main:
+            display_name: Lower Round 4 Match 2
+            teams:
+              - {round: 6, slot: 0, arena: main, position: 1}
+              - {round: 6, slot: 1, arena: main, position: 0}
+              - {round: 5, slot: 1, arena: main, position: 2}
+              - {round: 5, slot: 0, arena: main, position: 3}
+    8:
+      match_slots: # Upper Semi Final
+        0:
+          main:
+            display_name: Upper Semi Final
+            teams:
+              - {round: 5, slot: 1, arena: main, position: 0}
+              - {round: 5, slot: 1, arena: main, position: 1}
+              - {round: 5, slot: 0, arena: main, position: 0}
+              - {round: 5, slot: 0, arena: main, position: 1}
+    9:
+      match_slots: # Lower Round 5
+        0:
+          main:
+            display_name: Lower Round 5 Match 1
+            teams:
+              - {round: 7, slot: 0, arena: main, position: 0}
+              - {round: 7, slot: 1, arena: main, position: 0}
+              - {round: 7, slot: 0, arena: main, position: 1}
+              - {round: 7, slot: 1, arena: main, position: 1}
+    10:
+      match_slots: # Lower Semi Final
+        0:
+          main:
+            display_name: Lower Semi Final
+            teams:
+              - {round: 9, slot: 0, arena: main, position: 0}
+              - {round: 8, slot: 0, arena: main, position: 3}
+              - {round: 9, slot: 0, arena: main, position: 1}
+              - {round: 8, slot: 0, arena: main, position: 2}
+    11:
+      match_slots: # Grand Final
+        0:
+          main:
+            display_name: Grand Final
+            teams:
+              - {round: 8, slot: 0, arena: main, position: 0}
+              - {round: 10, slot: 0, arena: main, position: 0}
+              - {round: 8, slot: 0, arena: main, position: 1}
+              - {round: 10, slot: 0, arena: main, position: 1}
